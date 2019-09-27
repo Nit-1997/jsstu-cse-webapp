@@ -30,6 +30,11 @@ app.use(passport.session());
 
 const user = require('./routes/user');
 
+// Landing page Route
+app.get('/', (req, res)=> {
+    res.send('Landing Page will be Here....');
+})
+
 app.use('/', user);
 
 app.get("*", (req, res) => {

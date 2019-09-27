@@ -1,28 +1,34 @@
-var  express        = require("express")
-   , app            = express()
-   , cors           = require('cors')
-   , mongoose       = require("mongoose")
-   , passport       = require("passport")
-   , User            = require("./models/user")
-   , LocalStrategy  = require("passport-local")
-   , bodyParser     = require("body-parser");
+var express = require("express"),
+    app = express(),
+    cors = require('cors'),
+    mongoose = require("mongoose"),
+    passport = require("passport"),
+    User = require("./models/user"),
+    LocalStrategy = require("passport-local"),
+    bodyParser = require("body-parser");
 
 const path = require("path");
+
+let port = process.env.PORT || 7000;
 
 //db connection
 //mongoose.connect('');
 
 app.use(cors());
-app.use(bodyParser.urlencoded({extended:true}));
-app.use(bodyParser.json({limit: "50mb"}));
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
+app.use(bodyParser.json({
+    limit: "50mb"
+}));
 app.use(express.static(path.join(__dirname, "client", "build")));
 
 
 app.use(require("express-session")({
-    secret            : "anything i want i can put here",
-    resave            :  false,
-    saveUninitialized :  false
-    }));
+    secret: "anything i want i can put here",
+    resave: false,
+    saveUninitialized: false
+}));
 
 app.use(passport.initialize());
 app.use(passport.session());
@@ -40,6 +46,6 @@ app.get("*", (req, res) => {
 //      console.log("app server has started on heroku ");
 // });
 
-app.listen(7000,function(){
-     console.log("app server has started on local machine ");
+app.listen(port, function () {
+    console.log("app server has started on local machine ");
 });

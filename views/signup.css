@@ -1,0 +1,127 @@
+body {
+    font-family: Tahoma, Geneva, Verdana, sans-serif;
+    color: #fff;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background: url(login.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.signup {
+    background: rgba(45, 63, 81, 0.9);
+    padding: 20px 40px;
+    width: 400px;
+    height: 580px;
+    /* margin-left: 180px; */
+    margin: 0 auto;
+    margin-top: 90px;
+    position: relative;
+    border-radius: 15px;
+}
+
+form {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    /* width: 240px; */
+    text-align: center;
+}
+
+input {
+    width: 240px;
+    text-align: center;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #fff;
+    font-family: 'Play', sans-serif;
+    font-size: 16px;
+    font-weight: 200px;
+    padding: 10px 0;
+    transition: border 0.5s;
+    outline: none;
+    color: #fff;
+}
+
+input[type=button], button {
+    border: none;
+    width: 190px;
+    background: white;
+    color: #000;
+    font-size: 16px;
+    padding: 10px 0;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+/* span{
+    display: inline-block;
+} */
+
+.icons-login{
+    margin-top: 20px;
+    margin-left: 25px;
+    display: flex;
+    flex-direction: row;
+}
+
+i{
+    margin-left: 20px;
+    margin-right: 40px;
+}
+
+.fab {
+    padding: 20px;
+    background: #333;
+    border-radius: 100%;
+}
+
+input[type=button]:hover, button:hover {
+    color: #fff;
+    background-color: black;
+}
+
+h2 {
+    color: white;
+}
+
+a {
+    color: yellow;
+}
+
+a:hover {
+    color: skyblue;
+}
+
+
+::placeholder {
+    color: aliceblue;
+    opacity: 0.8;
+}
+
+@media(max-width: 50rem) and (min-width: 40rem) {
+    .signup {
+        margin-top: 25%;
+        height:600px;
+        width: 500px;
+    }
+
+    ::placeholder,
+    input {
+        font-size: 22px;
+    }
+}
+
+@media(max-width: 400px) {
+    .signup {
+        margin-top: 25%;
+        height: 580px;
+        width: 100%;
+        margin-top: 40px;
+    }
+    i{
+        margin-left: 10px;
+        margin-right: 20px;
+    }
+}

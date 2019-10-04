@@ -1,51 +1,42 @@
-var express = require("express"),
-    app = express(),
-    cors = require('cors'),
-    mongoose = require("mongoose"),
-    passport = require("passport"),
-    User = require("./models/user"),
-    LocalStrategy = require("passport-local"),
-    bodyParser = require("body-parser");
+var  express        = require("express")
+   , app            = express()
+   , cors           = require('cors')
+   , mongoose       = require("mongoose")
+   , User           = require("./models/user")
+   , bodyParser     = require("body-parser");
+
+require('dotenv').config();
 
 const path = require("path");
-
-let port = process.env.PORT || 7000;
-
-//db connection
-//mongoose.connect('');
-
+mongoose.connect(process.env.DB_CONN);
 app.use(cors());
-app.use(bodyParser.urlencoded({
-    extended: true
-}));
-app.use(bodyParser.json({
-    limit: "50mb"
-}));
+app.use(bodyParser.urlencoded({extended:true}));
+app.use(bodyParser.json({limit: "50mb"}));
 app.use(express.static(path.join(__dirname, "client", "build")));
 
+const jwt = require("jsonwebtoken");
 
-app.use(require("express-session")({
-    secret: "anything i want i can put here",
-    resave: false,
-    saveUninitialized: false
-}));
-
-app.use(passport.initialize());
-app.use(passport.session());
-
+//passport stuff
+const passport = require("passport");
+const jwtStrategry  = require("./strategies/jwt")
+passport.use(jwtStrategry);
 
 const user = require('./routes/user');
+const securedRoutes = require('./routes/securedRoutes');
 
 app.use('/', user);
+app.use('/', passport.authenticate('jwt', {session: false}), securedRoutes);
 
 app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, "client", "build", "index.html"));
 });
 
-// app.listen(process.env.PORT,process.env.IP,function(){
-//      console.log("app server has started on heroku ");
+
+app.listen(process.env.PORT,process.env.IP,function(){
+     console.log("app server has started on heroku ");
+});
+
+// app.listen(process.env.PORT,function(){
+//      console.log("app server has started on"+process.env.PORT);
 // });
 
-app.listen(port, function () {
-    console.log("app server has started on local machine ");
-});

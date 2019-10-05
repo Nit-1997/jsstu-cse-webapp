@@ -1,8 +1,9 @@
 import React,{Component} from "react";
 import './login.css';
-import {NavLink} from 'react-router-dom';
-import {Form,Button,Toast,Spinner} from 'react-bootstrap';
-import axios from '../../axios';
+// import {NavLink} from 'react-router-dom';
+// import {Form,Button} from 'react-bootstrap';
+import {Toast,Spinner} from 'react-bootstrap';
+// import axios from '../../axios';
 import ErrorImg from '../../assets/error.png';
 import * as actions from '../../store/actions/index';
 import {connect} from 'react-redux';
@@ -37,6 +38,10 @@ class Login extends Component {
     // }
   }
 
+  onForgotPasswordHandler = () => {
+    console.log("Forgot password");
+  }
+
   render() {
     let baseComp;
     if(this.props.loading){
@@ -59,7 +64,7 @@ class Login extends Component {
                         </div>
                         <button className="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit">Sign in</button>
                         <div className="text-center">
-                          <a style={{'color':'black'}} className="small" href="">Forgot password?</a>
+                          <a style={{'color':'black'}} className="small" href={this.onForgotPasswordHandler}>Forgot password?</a>
                         </div>
          </form>
       )

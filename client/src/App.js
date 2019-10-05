@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Route, Switch,Redirect } from 'react-router-dom';
-import { withRouter } from 'react-router-dom';
+// import { withRouter } from 'react-router-dom';
 import Signup from './containers/signup/signup';
 import Login from './containers/login/login';
 import Landing from './containers/landing/landing';

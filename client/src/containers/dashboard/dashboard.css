@@ -1,0 +1,12 @@
+.dashboard {
+  min-height: 355px;
+  padding-top: 60px;
+}
+
+span.tags {
+  background: #1abc9c;
+  border-radius: 2px;
+  color: #f5f5f5;
+  font-weight: bold;
+  padding: 4px 4px;
+}

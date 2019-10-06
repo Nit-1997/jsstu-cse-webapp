@@ -80,15 +80,12 @@ class Landing extends Component {
   }
 }
 
-const mapDispatchToProps = dispatch => {
-  console.log("dispatch");
+const mapDispatchToProps = dispatch =>{
+  console.log('dispatch');
   console.log(dispatch);
-  return {
-    onLogout: () => dispatch(actions.logout())
-  };
-};
+  return{
+    onLogout: ()=>dispatch(actions.logout())
+  }
+}
 
-export default connect(
-  null,
-  mapDispatchToProps
-)(withRouter(Landing));
+export default connect(null,mapDispatchToProps)(withRouter(Landing));

@@ -1,9 +1,10 @@
 import React,{ Component } from "react";
 import './signup.css';
-import  { Redirect } from 'react-router-dom'
-import {Form,Button,Toast,Spinner} from 'react-bootstrap';
+// import  { Redirect } from 'react-router-dom'
+// import {Form,Button} from 'react-bootstrap';
+import {Toast,Spinner} from 'react-bootstrap';
 import ErrorImg from '../../assets/error.png';
-import axios from 'axios';
+// import axios from 'axios';
 import * as actions from '../../store/actions/index';
 import {connect} from 'react-redux';
 

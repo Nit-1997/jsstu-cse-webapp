@@ -17,8 +17,8 @@ class Dashboard extends Component {
 
   render() {
     return (
-      <div>
-        <div class="container dashboard">
+      <div className="Dashboard">
+        <div class="container">
           <div class="jumbotron well">
             <div class="row">
               <div class="col-md-4">
@@ -47,31 +47,37 @@ class Dashboard extends Component {
           <div class="card-columns">
             <div class="card bg-info">
               <div class="card-body text-center">
+                <i class="fas fa-pen-alt card-img-top"></i>
                 <p class="card-text">Publications</p>
               </div>
             </div>
             <div class="card bg-info">
               <div class="card-body text-center">
+                <i class="fas fa-search card-img-top"></i>
                 <p class="card-text">Research Projects</p>
               </div>
             </div>
             <div class="card bg-info">
               <div class="card-body text-center">
+                <i class="fas fa-award card-img-top"></i>
                 <p class="card-text">Achievments & Awards</p>
               </div>
             </div>
             <div class="card bg-info">
               <div class="card-body text-center">
+                <i class="fas fa-chalkboard-teacher card-img-top"></i>
                 <p class="card-text">Subjects Handled</p>
               </div>
             </div>
             <div class="card bg-info">
               <div class="card-body text-center">
+                <i class="fas fa-chalkboard card-img-top"></i>
                 <p class="card-text">Trainings & Workshops Conducted</p>
               </div>
             </div>
             <div class="card bg-info">
               <div class="card-body text-center">
+                <i class="fas fa-school card-img-top"></i>
                 <p class="card-text">Trainings & Workshops Attended</p>
               </div>
             </div>

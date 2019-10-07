@@ -51,31 +51,30 @@ class App extends Component {
     }
     return (
       <div>
-        <header>{routes}</header>
+        <header>
+             {routes}
+        </header>
       </div>
     );
   }
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    onTryAutoSignIn: () => dispatch(actions.authCheckState())
-  };
-};
-
-const mapStateToProps = state => {
-  if (state.user === null) {
-    console.log("no user is present in session");
-  } else {
-    return {
-      user: state.auth.user,
-      loggedIn: state.auth.loggedIn,
-      token: state.auth.token
-    };
+const mapDispatchToProps = dispatch =>{
+  return{
+    onTryAutoSignIn: () => dispatch( actions.authCheckState() )
   }
-};
+}
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(App);
+const mapStateToProps = state =>{
+  if(state.user === null){
+    console.log('no user is present in session');
+  }else{
+    return{
+      user:state.auth.user,
+      loggedIn:state.auth.loggedIn,
+      token:state.auth.token
+    }
+  }
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(App);

@@ -30,7 +30,10 @@ class App extends Component {
             exact
             render={() => <Landing loggedIn={this.props.loggedIn} />}
           />
-          <Route path="/dashboard" render={() => <Dashboard />} />
+          <Route
+            path="/dashboard"
+            render={() => <Dashboard user={this.props.user} />}
+          />
           <Redirect to="/" />
         </Switch>
       );
@@ -43,7 +46,6 @@ class App extends Component {
             render={() => <Landing loggedIn={this.props.loggedIn} />}
           />
           <Route path="/signup" render={() => <Signup />} />
-          <Route path="/dashboard" render={() => <Dashboard />} />
           <Route path="/login" render={() => <Login />} />
           <Redirect to="/" />
         </Switch>

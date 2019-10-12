@@ -79,6 +79,11 @@ class Landing extends Component {
     );
   }
 }
+const mapStateToProps = state => {
+  return {
+    user: state.auth.user
+  };
+};
 
 const mapDispatchToProps = dispatch => {
   console.log("dispatch");
@@ -89,6 +94,6 @@ const mapDispatchToProps = dispatch => {
 };
 
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(withRouter(Landing));

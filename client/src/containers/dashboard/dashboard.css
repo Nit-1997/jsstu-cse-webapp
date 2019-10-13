@@ -5,8 +5,8 @@
 }
 
 .Dashboard img {
-  max-height: 250px;
-  /* border-radius: 10%; */
+  width: 150px;
+  height:150px;
 }
 
 span.tags {
@@ -19,7 +19,6 @@ span.tags {
 
 #services {
   padding: 60px 0 40px 0;
-  /* box-shadow: inset 0px 0px 12px 0px rgba(0, 0, 0, 0.1); */
 }
 
 #services .box,
@@ -32,6 +31,9 @@ span.tags {
   background: #fff;
   box-shadow: 0 10px 29px 0 rgba(68, 88, 144, 0.1);
   transition: all 0.3s ease-in-out;
+  justify-content:center;
+  text-align:center;
+  align-items:center;
 }
 
 #services .box:hover {
@@ -40,7 +42,6 @@ span.tags {
 }
 
 #services .icon {
-  position: absolute;
   left: 0px;
   top: calc(50% - 32px);
 }
@@ -52,10 +53,9 @@ span.tags {
 }
 
 #services .title {
-  margin-left: 50px;
   font-weight: 700;
-  margin-bottom: 15px;
   font-size: 18px;
+  padding-top:18px;
 }
 
 #services .title a {
@@ -72,3 +72,8 @@ span.tags {
   line-height: 24px;
   margin-bottom: 0;
 }
+
+.fas{
+  color:green;
+}
+

@@ -124,16 +124,4 @@ class Dashboard extends Component {
   }
 }
 
-const mapDispatchToProps = dispatch => {
-  console.log("dispatch");
-  console.log(dispatch);
-  return {
-    onTryAutoSignIn: () => dispatch(actions.authCheckState()),
-    onLogout: () => dispatch(actions.logout())
-  };
-};
-
-export default connect(
-  null,
-  mapDispatchToProps
-)(withRouter(Dashboard));
+export default (withRouter(Dashboard));

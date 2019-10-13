@@ -15,23 +15,28 @@ class Dashboard extends Component {
 
   componentDidUpdate() {}
 
+  onDummyHandler = () => {
+    console.log("Card Clicked");
+  };
+
   render() {
     return (
       <div className="Dashboard">
         <div class="container">
-          <div class="jumbotron well">
+          <div class="box well">
             <div class="row">
               <div class="col-md-4">
                 <img
-                  src="https://cdn.icon-icons.com/icons2/1378/PNG/512/avatardefault_92824.png"
+                  src={this.props.user.image}
                   alt=""
-                  class="rounded-circle img-fluid mx-auto d-block"
+                  class="img-fluid mx-auto d-block rounded-circle"
                 />
               </div>
               <div class="col-md-8">
-                <h2>Jane Doe</h2>
+                <h2>{this.props.user.name}</h2>
                 <p>
-                  <strong>About: </strong>Associate Professor
+                  <strong>About: </strong>
+                  {this.props.user.designation.split("_").join(" ")}
                 </p>
                 <p>
                   <strong>Subjects Handled: </strong>
@@ -43,60 +48,80 @@ class Dashboard extends Component {
               </div>
             </div>
           </div>
+          <section id="services" class="section-bg">
+            <div class="row">
+              <div class="col-md-6 col-lg-5 offset-lg-1">
+                <div class="box">
+                  <div class="icon">
+                    <i class="fas fa-pen-alt card-img-top"></i>
+                  </div>
+                  <h4 class="title">
+                    <a href={this.onDummyHandler}>Publications</a>
+                  </h4>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-5">
+                <div class="box">
+                  <div class="icon">
+                    <i class="fas fa-search card-img-top"></i>
+                  </div>
+                  <h4 class="title">
+                    <a href={this.onDummyHandler}>Research Projects</a>
+                  </h4>
+                </div>
+              </div>
 
-          <div class="card-columns">
-            <div class="card bg-info">
-              <div class="card-body text-center">
-                <i class="fas fa-pen-alt card-img-top"></i>
-                <p class="card-text">Publications</p>
+              <div class="col-md-6 col-lg-5 offset-lg-1">
+                <div class="box">
+                  <div class="icon">
+                    <i class="fas fa-award card-img-top"></i>
+                  </div>
+                  <h4 class="title">
+                    <a href={this.onDummyHandler}>Achievments & Awards</a>
+                  </h4>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-5">
+                <div class="box">
+                  <div class="icon">
+                    <i class="fas fa-chalkboard-teacher card-img-top"></i>
+                  </div>
+                  <h4 class="title">
+                    <a href={this.onDummyHandler}>Subjects Handled</a>
+                  </h4>
+                </div>
+              </div>
+
+              <div class="col-md-6 col-lg-5 offset-lg-1">
+                <div class="box">
+                  <div class="icon">
+                    <i class="fas fa-chalkboard card-img-top"></i>
+                  </div>
+                  <h4 class="title">
+                    <a href={this.onDummyHandler}>
+                      Trainings & Workshops Conducted
+                    </a>
+                  </h4>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-5">
+                <div class="box">
+                  <div class="icon">
+                    <i class="fas fa-school card-img-top"></i>
+                  </div>
+                  <h4 class="title">
+                    <a href={this.onDummyHandler}>
+                      Trainings & Workshops Attended
+                    </a>
+                  </h4>
+                </div>
               </div>
             </div>
-            <div class="card bg-info">
-              <div class="card-body text-center">
-                <i class="fas fa-search card-img-top"></i>
-                <p class="card-text">Research Projects</p>
-              </div>
-            </div>
-            <div class="card bg-info">
-              <div class="card-body text-center">
-                <i class="fas fa-award card-img-top"></i>
-                <p class="card-text">Achievments & Awards</p>
-              </div>
-            </div>
-            <div class="card bg-info">
-              <div class="card-body text-center">
-                <i class="fas fa-chalkboard-teacher card-img-top"></i>
-                <p class="card-text">Subjects Handled</p>
-              </div>
-            </div>
-            <div class="card bg-info">
-              <div class="card-body text-center">
-                <i class="fas fa-chalkboard card-img-top"></i>
-                <p class="card-text">Trainings & Workshops Conducted</p>
-              </div>
-            </div>
-            <div class="card bg-info">
-              <div class="card-body text-center">
-                <i class="fas fa-school card-img-top"></i>
-                <p class="card-text">Trainings & Workshops Attended</p>
-              </div>
-            </div>
-          </div>
+          </section>
         </div>
       </div>
     );
   }
 }
 
-const mapDispatchToProps = dispatch => {
-  console.log("dispatch");
-  console.log(dispatch);
-  return {
-    onLogout: () => dispatch(actions.logout())
-  };
-};
-
-export default connect(
-  null,
-  mapDispatchToProps
-)(withRouter(Dashboard));
+export default (withRouter(Dashboard));

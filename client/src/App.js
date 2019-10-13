@@ -30,7 +30,11 @@ class App extends Component {
             exact
             render={() => <Landing loggedIn={this.props.loggedIn} />}
           />
-          <Route path="/dashboard" render={() => <Dashboard />} />
+
+          <Route
+            path="/dashboard"
+            render={() => <Dashboard user={this.props.user} />}
+          />
           <Redirect to="/" />
         </Switch>
       );
@@ -43,7 +47,6 @@ class App extends Component {
             render={() => <Landing loggedIn={this.props.loggedIn} />}
           />
           <Route path="/signup" render={() => <Signup />} />
-          <Route path="/dashboard" render={() => <Dashboard />} />
           <Route path="/login" render={() => <Login />} />
           <Redirect to="/" />
         </Switch>
@@ -51,30 +54,31 @@ class App extends Component {
     }
     return (
       <div>
-        <header>
-             {routes}
-        </header>
+        <header>{routes}</header>
       </div>
     );
   }
 }
 
-const mapDispatchToProps = dispatch =>{
-  return{
-    onTryAutoSignIn: () => dispatch( actions.authCheckState() )
-  }
-}
+const mapDispatchToProps = dispatch => {
+  return {
+    onTryAutoSignIn: () => dispatch(actions.authCheckState())
+  };
+};
 
-const mapStateToProps = state =>{
-  if(state.user === null){
-    console.log('no user is present in session');
-  }else{
-    return{
-      user:state.auth.user,
-      loggedIn:state.auth.loggedIn,
-      token:state.auth.token
-    }
+const mapStateToProps = state => {
+  if (state.user === null) {
+    console.log("no user is present in session");
+  } else {
+    return {
+      user: state.auth.user,
+      loggedIn: state.auth.loggedIn,
+      token: state.auth.token
+    };
   }
-}
+};
 
-export default connect(mapStateToProps,mapDispatchToProps)(App);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(App);

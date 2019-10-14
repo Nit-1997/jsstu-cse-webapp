@@ -6,7 +6,7 @@
 
 .Dashboard img {
   width: 150px;
-  height:150px;
+  height: 150px;
 }
 
 span.tags {
@@ -31,9 +31,9 @@ span.tags {
   background: #fff;
   box-shadow: 0 10px 29px 0 rgba(68, 88, 144, 0.1);
   transition: all 0.3s ease-in-out;
-  justify-content:center;
-  text-align:center;
-  align-items:center;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
 }
 
 #services .box:hover {
@@ -55,7 +55,7 @@ span.tags {
 #services .title {
   font-weight: 700;
   font-size: 18px;
-  padding-top:18px;
+  padding-top: 18px;
 }
 
 #services .title a {
@@ -73,7 +73,6 @@ span.tags {
   margin-bottom: 0;
 }
 
-.fas{
-  color:green;
+.fas {
+  color: green;
 }
-

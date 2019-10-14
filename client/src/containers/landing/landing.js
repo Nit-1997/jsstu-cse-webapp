@@ -97,3 +97,4 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(withRouter(Landing));
+

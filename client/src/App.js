@@ -30,6 +30,7 @@ class App extends Component {
             exact
             render={() => <Landing loggedIn={this.props.loggedIn} />}
           />
+
           <Route
             path="/dashboard"
             render={() => <Dashboard user={this.props.user} />}

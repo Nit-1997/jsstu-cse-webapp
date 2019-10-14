@@ -122,4 +122,4 @@ class Dashboard extends Component {
   }
 }
 
-export default withRouter(Dashboard);
+export default (withRouter(Dashboard));

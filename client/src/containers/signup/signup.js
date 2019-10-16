@@ -7,6 +7,7 @@ import ErrorImg from '../../assets/error.png';
 // import axios from 'axios';
 import * as actions from '../../store/actions/index';
 import {connect} from 'react-redux';
+import Navbar from '../landing/landing';
 
 class Signup extends Component {
   constructor() {
@@ -70,22 +71,22 @@ class Signup extends Component {
         <form onSubmit={this.onSubmitHandler}>
                         
                         <div className="form-label-group">
-                          <input onChange={this.onChangeHandler} type="email" id="email" className="form-control" placeholder="Email address" required autofocus/>
-                          <label for="email">Email address</label>
+                          <input onChange={this.onChangeHandler} type="email" id="email" className="form-control" placeholder="Email address" required autoFocus/>
+                          <label htmlFor="email">Email address</label>
                         </div>
 
                        <div className="form-label-group">
                             <input className="form-control" onChange={this.onChangeHandlerFile} type="file" id="image" name="image" accept="image/*" required/>
-                            <label for="username">Upload Avatar</label>
+                            <label htmlFor="username">Upload Avatar</label>
                        </div>
                        
                         <div className="form-label-group">
-                          <input onChange={this.onChangeHandler} type="text" id="name" className="form-control" placeholder="Enter name" required autofocus/>
-                          <label for="name">Name</label>
+                          <input onChange={this.onChangeHandler} type="text" id="name" className="form-control" placeholder="Enter name" required autoFocus/>
+                          <label htmlFor="name">Name</label>
                         </div>
                        
                          <div className="form-group">
-                          <select onChange={this.onChangeHandler} id="designation" className="form-control extra" required autofocus>
+                          <select onChange={this.onChangeHandler} id="designation" className="form-control extra" required autoFocus>
                               <option disabled selected>Designation</option>
                               <option value="Associate_prof">Associate Professor</option>
                               <option value="Head_of_Dept">Head of Department</option>
@@ -95,7 +96,7 @@ class Signup extends Component {
                         </div>
 
                         <div className="form-group">
-                          <select onChange={this.onChangeHandler} id="mode" className="form-control extra" required autofocus>
+                          <select onChange={this.onChangeHandler} id="mode" className="form-control extra" required autoFocus>
                               <option disabled selected>Mode</option>
                               <option value="faculty">Faculty</option>
                               <option value="hod">Hod</option>
@@ -105,11 +106,11 @@ class Signup extends Component {
 
                         <div className="form-label-group">
                           <input onChange={this.onChangeHandler} type="password" id="password" className="form-control" placeholder="Password" required/>
-                          <label for="password">Password</label>
+                          <label htmlFor="password">Password</label>
                         </div>
                         <div className="form-label-group">
                           <input onChange={this.onChangeHandler} type="password" id="confirm" className="form-control" placeholder="Confirm Password" required/>
-                          <label for="confirm">Confirm Password</label>
+                          <label htmlFor="confirm">Confirm Password</label>
                         </div>
                         <button className="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit">Sign Up</button>          
                       </form>
@@ -117,6 +118,8 @@ class Signup extends Component {
     }
     return (
       <div className="commHeader">
+      <Navbar/>
+      <div className="mt-4"></div>
          <Toast
         onClose={() => this.setState({show:false})}
         show={this.state.show} delay={4000} autohide

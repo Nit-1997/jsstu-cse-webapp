@@ -1,18 +1,7 @@
-/*
-  Theme Name: NewBiz
-  Theme URL: https://bootstrapmade.com/newbiz-bootstrap-business-template/
-  Author: BootstrapMade.com
-  License: https://bootstrapmade.com/license/
-*/
-
-/*--------------------------------------------------------------
-# General
---------------------------------------------------------------*/
-
 body {
   background: #fff;
   color: #444;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 a {
@@ -39,7 +28,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 400;
   margin: 0 0 20px 0;
   padding: 0;
@@ -69,6 +58,11 @@ h6 {
   color: #fff;
 }
 
+.front-image {
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 #00000057, 0 6px 20px 0 #00000088;
+}
+
 /* Prelaoder */
 
 #preloader {
@@ -83,7 +77,7 @@ h6 {
 }
 
 #preloader:before {
-  content: "";
+  content: '';
   position: fixed;
   top: calc(50% - 30px);
   left: calc(50% - 30px);
@@ -172,7 +166,7 @@ h6 {
 #intro {
   width: 100%;
   position: relative;
-  background: url("../img/intro-bg.png") center bottom no-repeat;
+  background: url('../img/intro-bg.png') center bottom no-repeat;
   background-size: cover;
   padding: 150px 0 120px 0;
 }
@@ -183,6 +177,12 @@ h6 {
   font-size: 40px;
   font-weight: 600;
   text-align: center;
+}
+
+#intro h1 {
+  margin-bottom: 20px;
+  font-weight: 600;
+  font-size: 45px;
 }
 
 #intro .intro-img {
@@ -209,7 +209,7 @@ h6 {
 
 #intro .intro-info .btn-get-started,
 #intro .intro-info .btn-services {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 14px;
   font-weight: 600;
   letter-spacing: 1px;
@@ -269,7 +269,7 @@ h6 {
   padding: 10px 15px;
   transition: 0.3s;
   font-size: 14px;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 500;
 }
 
@@ -318,7 +318,7 @@ h6 {
 }
 
 .main-nav .drop-down > a:after {
-  content: "\f107";
+  content: '\f107';
   font-family: FontAwesome;
   padding-left: 10px;
 }
@@ -339,7 +339,7 @@ h6 {
 }
 
 .main-nav .drop-down .drop-down > a:after {
-  content: "\f105";
+  content: '\f105';
   position: absolute;
   right: 15px;
 }
@@ -381,7 +381,7 @@ h6 {
 }
 
 .mobile-nav .drop-down > a:after {
-  content: "\f078";
+  content: '\f078';
   font-family: FontAwesome;
   padding-left: 10px;
   position: absolute;
@@ -389,7 +389,7 @@ h6 {
 }
 
 .mobile-nav .active.drop-down > a:after {
-  content: "\f077";
+  content: '\f077';
 }
 
 .mobile-nav .drop-down > a {
@@ -467,10 +467,10 @@ h6 {
 .section-header p {
   text-align: center;
   margin: auto;
-  font-size: 15px;
+  font-size: 18px;
   padding-bottom: 60px;
-  color: #556877;
-  width: 60%;
+  color: #363535;
+  width: 80%;
 }
 
 /* Section with background
@@ -571,7 +571,7 @@ h6 {
 #about .about-container .icon-box .description {
   margin-left: 80px;
   line-height: 24px;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 #about .about-extra {
@@ -583,6 +583,31 @@ h6 {
   font-size: 24px;
 }
 
+.carousel-indicators li {
+  border: 1px solid #464646;
+  height: 10px;
+  width: 10px;
+  border-radius: 100%;
+}
+
+.carousel-indicators li:hover {
+  border: 1px solid #fff;
+  background: #464646;
+}
+
+.carousel-control-prev-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%333' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;
+ }
+ 
+ .carousel-control-next-icon {
+   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%333' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
+ }
+
+.img-hod,
+.img-branch {
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 #00000057, 0 6px 20px 0 #00000088;
+}
 /* Services Section
 --------------------------------*/
 
@@ -701,7 +726,7 @@ h6 {
 }
 
 #why-us .counters span {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: bold;
   font-size: 48px;
   display: block;
@@ -711,7 +736,7 @@ h6 {
 #why-us .counters p {
   padding: 0;
   margin: 0 0 20px 0;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 14px;
   color: #cce5ff;
 }
@@ -1087,7 +1112,7 @@ h6 {
   margin: 0 0 10px 0;
   padding: 0;
   line-height: 1;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 300;
   letter-spacing: 3px;
   text-transform: uppercase;
@@ -1097,7 +1122,7 @@ h6 {
 #contact .contact-about p {
   font-size: 14px;
   line-height: 24px;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   color: #888;
 }
 
@@ -1179,12 +1204,12 @@ h6 {
 
 #contact .form input,
 #contact .form textarea {
-  border-radius: 0;
+  border-radius: 5px;
   box-shadow: none;
   font-size: 14px;
 }
 
-#contact .form button[type="submit"] {
+#contact .form button[type='submit'] {
   background: #007bff;
   border: 0;
   border-radius: 20px;
@@ -1193,7 +1218,7 @@ h6 {
   transition: 0.3s;
 }
 
-#contact .form button[type="submit"]:hover {
+#contact .form button[type='submit']:hover {
   background: #0067d5;
   cursor: pointer;
 }
@@ -1223,7 +1248,7 @@ h6 {
   margin: 0 0 20px 0;
   padding: 2px 0 2px 0;
   line-height: 1;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   color: #fff;
   font-weight: 400;
   letter-spacing: 3px;
@@ -1234,7 +1259,7 @@ h6 {
   font-size: 13px;
   line-height: 24px;
   margin-bottom: 0;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   color: #ecf5ff;
 }
 
@@ -1305,24 +1330,25 @@ h6 {
   margin-bottom: 30px;
 }
 
-#footer .footer-top .footer-newsletter input[type="email"] {
-  border: 0;
+#footer .footer-top .footer-newsletter input[type='email'] {
+  border-radius: 5px 0 0 5px;
   padding: 6px 8px;
-  width: 65%;
+  width: 70%;
 }
 
-#footer .footer-top .footer-newsletter input[type="submit"] {
+#footer .footer-top .footer-newsletter input[type='submit'] {
   background: #007bff;
-  border: 0;
-  width: 35%;
-  padding: 6px 0;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  width: 30%;
+  padding: 8px 0;
   text-align: center;
   color: #fff;
   transition: 0.3s;
   cursor: pointer;
 }
 
-#footer .footer-top .footer-newsletter input[type="submit"]:hover {
+#footer .footer-top .footer-newsletter input[type='submit']:hover {
   background: #0062cc;
 }
 

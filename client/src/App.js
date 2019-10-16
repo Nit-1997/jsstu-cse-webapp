@@ -3,7 +3,7 @@ import { Route, Switch, Redirect } from "react-router-dom";
 // import { withRouter } from 'react-router-dom';
 import Signup from "./containers/signup/signup";
 import Login from "./containers/login/login";
-import Landing from "./containers/landing/landing";
+import Landing from "./containers/landing/LandingPage";
 import Dashboard from "./containers/dashboard/dashboard";
 import { connect } from "react-redux";
 import * as actions from "./store/actions/index";

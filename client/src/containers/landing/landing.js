@@ -3,8 +3,6 @@ import React, { Fragment, Component } from "react";
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import * as actions from "../../store/actions/index";
-import "../../views/css/style.css";
-import "../../views/lib/font-awesome/css/font-awesome.min.css";
 
 class Landing extends Component {
   constructor() {
@@ -38,6 +36,10 @@ class Landing extends Component {
     this.props.history.push({
       pathname: "/dashboard"
     });
+  };
+
+  onDummyLinkHandler = () => {
+    console.log("Dummy link clicked!");
   };
 
   componentDidMount() {}
@@ -109,19 +111,19 @@ class Landing extends Component {
                   </li>
 
                   <li className="drop-down">
-                    <a href={"#"}>Time Table</a>
+                    <a href={this.onDummyLinkHandler}>Time Table</a>
                     <ul>
                       <li>
-                        <a href="#">I</a>
+                        <a href={this.onDummyLinkHandler}>I</a>
                       </li>
                       <li>
-                        <a href="#">II</a>
+                        <a href={this.onDummyLinkHandler}>II</a>
                       </li>
                       <li>
-                        <a href="#">III</a>
+                        <a href={this.onDummyLinkHandler}>III</a>
                       </li>
                       <li>
-                        <a href="#">IV</a>
+                        <a href={this.onDummyLinkHandler}>IV</a>
                       </li>
                     </ul>
                   </li>
@@ -141,6 +143,7 @@ class Landing extends Component {
     Intro Section
   ============================--> */}
           <section id="intro" className="clearfix">
+            <h2>Department of Computer Science & Engineering</h2>
             <div className="container">
               <div className="intro-img">
                 <img
@@ -206,10 +209,6 @@ class Landing extends Component {
 
                 <div className="row about-container">
                   <div className="col-lg-6 content order-lg-1 order-2">
-                    <p>
-                      Department of Computer Science and Engineering has .....
-                    </p>
-
                     <div className="icon-box wow fadeInUp">
                       <div className="icon">
                         <i className="fa fa-shopping-bag"></i>
@@ -276,7 +275,7 @@ class Landing extends Component {
 
                   <div className="col-lg-6 background order-lg-2 order-1 wow fadeInUp">
                     <img
-                      src={require("../../views/img/about-img.svg")}
+                      src="https://jssstuniv.in/wp-content/uploads/2018/11/CSE-1800x870.jpg"
                       className="img-fluid"
                       alt=""
                     />
@@ -287,9 +286,9 @@ class Landing extends Component {
                   <div className="col-lg-6 wow fadeInUp">
                     <img
                       src={
-                        "https://jssstuniv.in/wp-content/uploads/2018/11/CSE-1800x870.jpg"
+                        "https://jssstuniv.in/wp-content/uploads/2018/11/MPP-Picture-500x500.jpg"
                       }
-                      className="img-fluid"
+                      className="img-fluid w-50"
                       alt=""
                     />
                   </div>
@@ -571,10 +570,10 @@ class Landing extends Component {
                         <h3>Akhilesh Yadav</h3>
                         <h4>Indian Politician</h4>
                         <p>
-                          "Akhilesh Yadav born 1 July 1973) is the current and
-                          the 20th Chief Minister of the Indian state of Uttar
-                          Pradesh. Assuming office on 15 March 2012 at the age
-                          of 38, he is the youngest person to have held this
+                          "Akhilesh Yadav, born on 1 July 1973, is the current
+                          and the 20th Chief Minister of the Indian state of
+                          Uttar Pradesh. Assuming office on 15 March 2012 at the
+                          age of 38, he is the youngest person to have held this
                           office. His first significant success in politics was
                           his election as a member of the Lok Sabha for the
                           constituency of Kannauj in 2000. Akhilesh Yadav was
@@ -987,6 +986,7 @@ class Landing extends Component {
                         src={
                           "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15592.149409781525!2d76.6134265!3d12.3132715!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x1ad797cbfc78d07a!2sJSS%20Science%20and%20Technology%20University%2C%20Mysuru.!5e0!3m2!1sen!2sin!4v1571046705180!5m2!1sen!2sin"
                         }
+                        title="map"
                         frameborder="0"
                         style={{ border: "0", width: "100%", height: "312px" }}
                         allowfullscreen
@@ -1017,12 +1017,7 @@ class Landing extends Component {
                         Your message has been sent. Thank you!
                       </div>
                       <div id="errormessage"></div>
-                      <form
-                        action=""
-                        method="post"
-                        role="form"
-                        className="contactForm"
-                      >
+                      <form action="" method="post" className="contactForm">
                         <div className="form-row">
                           <div className="form-group col-lg-6">
                             <input

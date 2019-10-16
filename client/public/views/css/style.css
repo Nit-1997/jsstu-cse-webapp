@@ -174,7 +174,15 @@ h6 {
   position: relative;
   background: url("../img/intro-bg.png") center bottom no-repeat;
   background-size: cover;
-  padding: 200px 0 120px 0;
+  padding: 150px 0 120px 0;
+}
+
+#intro h2 {
+  color: #fff;
+  margin-bottom: 40px;
+  font-size: 40px;
+  font-weight: 600;
+  text-align: center;
 }
 
 #intro .intro-img {
@@ -936,6 +944,7 @@ h6 {
 #team img {
   width: 200px;
   height: 200px;
+  object-fit: scale-down;
 }
 
 #team .member {

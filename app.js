@@ -31,12 +31,6 @@ app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, "client", "build", "index.html"));
 });
 
-
 app.listen(process.env.PORT,process.env.IP,function(){
-     console.log("app server has started on heroku ");
+     console.log("app server has started on "+process.env.PORT);
 });
-
-// app.listen(process.env.PORT,function(){
-//      console.log("app server has started on"+process.env.PORT);
-// });
-

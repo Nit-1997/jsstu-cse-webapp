@@ -7,6 +7,7 @@
 .Dashboard img {
   width: 150px;
   height: 150px;
+  object-fit: scale-down;
 }
 
 span.tags {
@@ -17,11 +18,11 @@ span.tags {
   padding: 4px 4px;
 }
 
-#services {
+#dashboard {
   padding: 60px 0 40px 0;
 }
 
-#services .box,
+#dashboard .box,
 .Dashboard .box {
   padding: 30px;
   position: relative;
@@ -29,44 +30,43 @@ span.tags {
   border-radius: 10px;
   margin: 0 10px 40px 10px;
   background: #fff;
-  box-shadow: 0 10px 29px 0 rgba(68, 88, 144, 0.1);
   transition: all 0.3s ease-in-out;
   justify-content: center;
   text-align: center;
   align-items: center;
 }
 
-#services .box:hover {
+#dashboard .box:hover {
   -webkit-transform: translateY(-5px);
   transform: translateY(-5px);
 }
 
-#services .icon {
+#dashboard .icon {
   left: 0px;
   top: calc(50% - 32px);
 }
 
-#services .icon i {
+#dashboard .icon i {
   font-size: 64px;
   line-height: 1;
   transition: 0.5s;
 }
 
-#services .title {
+#dashboard .title {
   font-weight: 700;
   font-size: 18px;
   padding-top: 18px;
 }
 
-#services .title a {
+#dashboard .title a {
   color: #111;
 }
 
-#services .box:hover .title a {
+#dashboard .box:hover .title a {
   color: #007bff;
 }
 
-#services .description {
+#dashboard .description {
   font-size: 14px;
   margin-left: 40px;
   line-height: 24px;

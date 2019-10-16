@@ -46,7 +46,7 @@ class Dashboard extends Component {
               </div>
             </div>
           </div>
-          <section id="services" class="section-bg">
+          <section id="dashboard" class="section-bg">
             <div class="row">
               <div class="col-md-6 col-lg-5 offset-lg-1">
                 <div class="box">

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 // import { Route, Switch, Redirect } from "react-router-dom";
 import { withRouter } from "react-router-dom";
 import "./dashboard.css";
+import Navbar from "../landing/landing";
 
 class Dashboard extends Component {
   constructor() {
@@ -19,8 +20,9 @@ class Dashboard extends Component {
 
   render() {
     return (
-      <div className="Dashboard">
-        <div class="container">
+      <div className="Dashboard  mt-2">
+      <Navbar loggedIn={this.props.loggedIn}/>
+        <div class="container mt-4">
           <div class="box well">
             <div class="row">
               <div class="col-md-4">
@@ -51,7 +53,7 @@ class Dashboard extends Component {
               <div class="col-md-6 col-lg-5 offset-lg-1">
                 <div class="box">
                   <div class="icon">
-                    <i class="fas fa-pen-alt card-img-top"></i>
+                    <i class="fa fa-pencil card-img-top"></i>
                   </div>
                   <h4 class="title">
                     <a href={this.onDummyHandler}>Publications</a>
@@ -72,8 +74,7 @@ class Dashboard extends Component {
               <div class="col-md-6 col-lg-5 offset-lg-1">
                 <div class="box">
                   <div class="icon">
-                    <i class="fas fa-award card-img-top"></i>
-                  </div>
+                  <i class="fa fa-trophy " aria-hidden="true"></i>                  </div>
                   <h4 class="title">
                     <a href={this.onDummyHandler}>Achievments & Awards</a>
                   </h4>

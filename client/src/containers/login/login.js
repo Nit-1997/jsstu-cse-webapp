@@ -20,9 +20,9 @@ class Login extends Component {
   }
 
   onChange = (e) => {
-      // this.setState({[e.target.id]:e.target.value},()=>{
-      //   console.log(this.state);
-      // })
+      this.setState({[e.target.id]:e.target.value},()=>{
+        console.log(this.state);
+      })
   }
 
   onSubmitHandler = (e) =>{
@@ -32,11 +32,11 @@ class Login extends Component {
        password:this.state.password
     }
     this.props.onLogin(formData);
-    // if(this.props.user){
-    //   this.props.history.push({
-    //           pathname: '/'
-    //   });
-    // }
+    if(this.props.user){
+      // this.props.history.push({
+      //         pathname: '/'
+      // });
+    }
   }
 
   onForgotPasswordHandler = () => {
@@ -47,7 +47,7 @@ class Login extends Component {
     let baseComp;
     if(this.props.loading){
        baseComp = (
-          <div style={{'text-align':'center'}}>
+          <div style={{textAlign:'center'}}>
                    <Spinner  style={{'height':'100px','width':'100px'}} animation="border"/>         
            </div>
         ) 

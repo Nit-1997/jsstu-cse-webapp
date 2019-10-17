@@ -73,6 +73,6 @@ span.tags {
   margin-bottom: 0;
 }
 
-.fas {
+.fas, .box .fa {
   color: green;
 }

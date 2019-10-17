@@ -7,6 +7,7 @@ import {Toast,Spinner} from 'react-bootstrap';
 import ErrorImg from '../../assets/error.png';
 import * as actions from '../../store/actions/index';
 import {connect} from 'react-redux';
+import Navbar from '../landing/landing';
 
 class Login extends Component {
  constructor() {
@@ -19,9 +20,9 @@ class Login extends Component {
   }
 
   onChange = (e) => {
-      this.setState({[e.target.id]:e.target.value},()=>{
-        console.log(this.state);
-      })
+      // this.setState({[e.target.id]:e.target.value},()=>{
+      //   console.log(this.state);
+      // })
   }
 
   onSubmitHandler = (e) =>{
@@ -54,13 +55,13 @@ class Login extends Component {
       baseComp = (
          <form onSubmit={this.onSubmitHandler}>
                         <div className="form-label-group">
-                          <input onChange={this.onChange} type="email" id="username" className="form-control" placeholder="Email address" required autofocus/>
-                          <label for="username">Email address</label>
+                          <input onChange={this.onChange} type="email" id="username" className="form-control" placeholder="Email address" required autoFocus/>
+                          <label htmlFor="username">Email address</label>
                         </div>
 
                         <div className="form-label-group">
                           <input onChange={this.onChange} type="password" id="password" className="form-control" placeholder="Password" required/>
-                          <label for="password">Password</label>
+                          <label htmlFor="password">Password</label>
                         </div>
                         <button className="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit">Sign in</button>
                         <div className="text-center">
@@ -71,6 +72,7 @@ class Login extends Component {
     }
     return (
       <div>
+      <Navbar/>
        <Toast
         onClose={() => this.setState({show:false})}
         show={this.state.show} delay={4000} autohide

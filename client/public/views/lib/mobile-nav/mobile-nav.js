@@ -1,5 +1,4 @@
-(function ($) {
-  "use strict";
+$(function () {
 
   // Mobile Navigation
   if ($('.main-nav').length) {
@@ -36,4 +35,4 @@
     $(".mobile-nav, .mobile-nav-toggle").hide();
   }
 
-})(jQuery);
+});

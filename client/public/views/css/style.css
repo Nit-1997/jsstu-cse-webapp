@@ -2,6 +2,9 @@ body {
   background: #fff;
   color: #444;
   font-family: 'Open Sans', sans-serif;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
 }
 
 a {
@@ -171,18 +174,10 @@ h6 {
   padding: 150px 0 120px 0;
 }
 
-#intro h2 {
-  color: #fff;
-  margin-bottom: 40px;
-  font-size: 40px;
-  font-weight: 600;
-  text-align: center;
-}
-
 #intro h1 {
   margin-bottom: 20px;
-  font-weight: 600;
-  font-size: 45px;
+  font-weight: 700;
+  font-size: 48px;
 }
 
 #intro .intro-img {
@@ -197,13 +192,14 @@ h6 {
 
 #intro .intro-info h2 {
   color: #fff;
-  margin-bottom: 40px;
-  font-size: 48px;
-  font-weight: 700;
+  margin-top: 40px;
+  font-size: 42px;
+  text-align: center;
+  font-weight: 600;
 }
 
 #intro .intro-info h2 span {
-  color: #74b5fc;
+  color: #74ecfc;
   text-decoration: underline;
 }
 
@@ -412,7 +408,7 @@ h6 {
   z-index: 9998;
   border: 0;
   background: none;
-  font-size: 24px;
+  font-size: 28px;
   transition: all 0.4s;
   outline: none !important;
   line-height: 1;
@@ -422,7 +418,7 @@ h6 {
 
 .mobile-nav-toggle i {
   margin: 18px 18px 0 0;
-  color: #004289;
+  color: #0069e2;
 }
 
 .mobile-nav-overly {
@@ -464,11 +460,10 @@ h6 {
   position: relative;
 }
 
-.section-header p {
-  text-align: center;
+.section-header p, .section-header ol {
+  /* text-align: center; */
   margin: auto;
   font-size: 18px;
-  padding-bottom: 60px;
   color: #363535;
   width: 80%;
 }
@@ -568,8 +563,11 @@ h6 {
   color: #283d50;
 }
 
+.col-sm-12{
+  padding: 0;
+}
+
 #about .about-container .icon-box .description {
-  margin-left: 80px;
   line-height: 24px;
   font-size: 16px;
 }
@@ -1396,6 +1394,18 @@ h6 {
     padding: 140px 0 60px 0;
   }
 
+  #intro h1 {
+    margin-bottom: 10px;
+    font-weight: 400;
+    font-size: 40px;
+  }
+
+
+  #intro .intro-info h2 {
+    font-size: 35px;
+    margin-top: 30px;
+  }
+
   #intro .intro-img {
     width: 80%;
     float: none;
@@ -1425,9 +1435,16 @@ h6 {
     width: 100%;
   }
 
+  #intro h1 {
+    margin-bottom: 10px;
+    font-weight: 500;
+    font-size: 35px;
+  }
+
+
   #intro .intro-info h2 {
-    font-size: 34px;
-    margin-bottom: 30px;
+    font-size: 26px;
+    margin-bottom: 20px;
   }
 
   .section-header p {
@@ -1453,5 +1470,20 @@ h6 {
 @media (max-width: 574px) {
   #intro {
     padding: 100px 0 20px 0;
+  }
+
+  #intro h1 {
+    margin-bottom: 10px;
+    font-weight: 500;
+    font-size: 26px;
+  }
+
+  #intro .intro-info h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+
+  #why-us .counters span {
+    font-size: 20px;
   }
 }

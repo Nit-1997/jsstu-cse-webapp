@@ -5,7 +5,7 @@ class Body extends Component {
         return (
             <div>
                 <section id="intro" className="clearfix">
-                    <h1 className="text-center text-white font-weight-bold">Department Of Computer Science & Engineering</h1>
+                    <h1 className="text-center text-white font-weight-bold p-2">Department Of Computer Science & Engineering</h1>
                     <div className="container">
                         <div className="intro-img">
                             <img
@@ -54,76 +54,81 @@ class Body extends Component {
                                     surrounding communities.
                                     <br />
                                     <br />
+
                                     The department is actively involved in International
                                     collaborative research and also in sponsored research
                                     projects through various funding agencies:
-                                    <br />
-                                    <br />
-                                    1. Science and Engineering Research Board (SERB)
-                                    <br />
-                                    2. Ministry of Human Resource Development (MHRD) 3.
-                                    University Grant Commission (UGC)
-                                    <br />
-                                    4. Department of Science and Technology (DST)
-                                    <br />
+                                    <br/>
                                 </p>
+                                <ol typeof='I' className='mb-4'>
+                                    <li>
+                                        Science and Engineering Research Board (SERB)
+                                        </li>
+                                    <li>
+                                        Ministry of Human Resource Development (MHRD) 3.
+                                    University Grant Commission (UGC)
+                                        </li>
+                                    <li>
+                                        Department of Science and Technology (DST)
+                                        </li>
+                                </ol>
                             </header>
 
-                            <div className="row about-container">
-                                <div className="content order-lg-1 order-2">
-                                    <div className="row">
-                                        <div className="col-md-6">
-                                            <div className="icon-box wow fadeInUp">
-                                                <div className="icon">
-                                                    <i className="fa fa-shopping-bag"></i>
-                                                </div>
-                                                <h4 className="title">
-                                                    <a href="#1">Vision</a>
-                                                </h4>
-                                                <p className="description">
-                                                    Advancing JSS S&T University as a leader in education,
-                                                    research and technology on the international arena. To
-                                                    provide the students a universal platform to launch
-                                                    their careers, vesting the industry and research
-                                                    community with skilled and professional workforce.
-                                                    Accomplishing JSS S&T University as an epicentre for
-                                                    innovation, centre of excellence for research with state
-                                                    of the art lab facilities. Fostering an erudite,
-                                                    professional forum for researchers and industrialist to
-                                                    coexist and to work cohesively for the growth and
-                                                    development of science and technology for betterment of
-                                                    society
-                                                </p>
-                                            </div>
+                            <div className="row mt-2 p-2 about-container">
+                                <div className="col-md-6">
+                                    <div className="icon-box wow fadeInUp">
+                                        <div className="icon">
+                                            <i className="fa fa-shopping-bag"></i>
                                         </div>
-                                        <div className="col-md-6">
-                                            <div
-                                                className="icon-box wow fadeInUp"
-                                                data-wow-delay="0.2s"
-                                            >
+                                        <h4 className="title">
+                                            <a href="#1">Vision</a>
+                                        </h4>
+                                        <p className="description">
+                                            Advancing JSS S&T University as a leader in education,
+                                            research and technology on the international arena. To
+                                            provide the students a universal platform to launch
+                                            their careers, vesting the industry and research
+                                            community with skilled and professional workforce.
+                                            Accomplishing JSS S&T University as an epicentre for
+                                            innovation, centre of excellence for research with state
+                                            of the art lab facilities. Fostering an erudite,
+                                            professional forum for researchers and industrialist to
+                                            coexist and to work cohesively for the growth and
+                                            development of science and technology for betterment of
+                                            society
+                                                </p>
 
-                                                <div className="icon">
-                                                    <i className="fa fa-photo"></i>
-                                                </div>
-                                                <h4 className="title">
-                                                    <a href="#1">Mission </a>
-                                                </h4>
-                                                <p className="description">
-                                                    Education, research and social outreach are the core
-                                                    doctrines of JSS S&T University that are responsible for
-                                                    accomplishment of in-depth knowledge base, professional
-                                                    skill and innovative technologies required to improve
-                                                    the socio economic conditions of the country. Our
-                                                    mission is to develop JSS S&T University as a global
-                                                    destination for cohesive learning of engineering,
-                                                    science and management which are strongly supported with
-                                                    interdisciplinary research and academia.
-                                                </p>
-                                            </div>
-                                        </div>
                                     </div>
+                                </div>
+                                <div className="col-md-6">
+                                    <div
+                                        className="icon-box wow fadeInUp"
+                                        data-wow-delay="0.2s"
+                                    >
 
-                                    {/* <div
+                                        <div className="icon">
+                                            <i className="fa fa-photo"></i>
+                                        </div>
+                                        <h4 className="title">
+                                            <a href="#1">Mission </a>
+                                        </h4>
+
+                                        <p className="description">
+                                            Education, research and social outreach are the core
+                                            doctrines of JSS S&T University that are responsible for
+                                            accomplishment of in-depth knowledge base, professional
+                                            skill and innovative technologies required to improve
+                                            the socio economic conditions of the country. Our
+                                            mission is to develop JSS S&T University as a global
+                                            destination for cohesive learning of engineering,
+                                            science and management which are strongly supported with
+                                            interdisciplinary research and academia.
+                                                </p>
+
+                                    </div>
+                                </div>
+
+                                {/* <div
                       className="icon-box wow fadeInUp"
                       data-wow-delay="0.4s"
                     >
@@ -139,7 +144,6 @@ class Body extends Component {
                         adopted
                       </p>
                     </div> */}
-                                </div>
                             </div>
 
                             <div className="row about-extra">
@@ -169,7 +173,7 @@ class Body extends Component {
                             </div>
                         </div>
                     </section>
-                    <div className="p-4">
+                    <div className="p-md-4">
                         <div className="background order-lg-2 order-1 wow fadeInUp">
                             <img
                                 src="https://jssstuniv.in/wp-content/uploads/2018/11/CSE-1800x870.jpg"
@@ -439,15 +443,17 @@ class Body extends Component {
                                     <div className="carousel-item active">
                                         <div className="row">
                                             <div className="col-md-3">
-                                                <img
-                                                    src={
-                                                        "http://www.sjcealumni.org/assets/content_files/151337948//files/akhilesh-yadav.jpg"
-                                                    }
-                                                    className="testimonial-img img-fluid rounded-circle"
-                                                    alt=""
-                                                />
-                                                <h3>Akhilesh Yadav</h3>
-                                                <h4 className="text-muted">Indian Politician</h4>
+                                                <div className="d-flex justify-content-center">
+                                                    <img
+                                                        src={require('../../views/img/akhilesh.jpg')
+                                                        }
+                                                        className="testimonial-img img-fluid rounded-circle"
+                                                        alt="" width="200"
+                                                    />
+                                                </div>
+
+                                                <h4 className='text-center'>Akhilesh Yadav</h4>
+                                                <h5 className="text-muted text-center">Indian Politician</h5>
                                             </div>
                                             <div className="col-md-9">
                                                 <p>
@@ -481,15 +487,17 @@ class Body extends Component {
                                     <div className="carousel-item">
                                         <div className="row">
                                             <div className="col-md-3">
-                                                <img
-                                                    src={
-                                                        "http://www.sjcealumni.org/assets/content_files/151337948//files/shanmugam.jpg"
-                                                    }
-                                                    className="testimonial-img img-fluid rounded-circle"
-                                                    alt="" width="90"
-                                                />
-                                                <h3>Shanmugam Manjunath</h3>
-                                                <h5 className="text-muted">Indian Oil Corporation Officer</h5>
+                                                <div className="d-flex justify-content-center">
+                                                    <img
+                                                        src={
+                                                            "http://www.sjcealumni.org/assets/content_files/151337948//files/shanmugam.jpg"
+                                                        }
+                                                        className="testimonial-img img-fluid rounded-circle"
+                                                        alt="" width="90"
+                                                    />
+                                                </div>
+                                                <h5 className='text-center'>Shanmugam Manjunath</h5>
+                                                <h5 className="text-muted text-center">Indian Oil Corporation Officer</h5>
                                             </div>
                                             <div className="col-md-9">
                                                 <p>
@@ -521,15 +529,18 @@ class Body extends Component {
                                     <div className="carousel-item">
                                         <div className="row">
                                             <div className="col-md-3">
-                                                <img
-                                                    src={
-                                                        "http://www.sjcealumni.org/assets/content_files/151337948//files/Nidhi-Subbaiah.jpg"
-                                                    }
-                                                    className="testimonial-img img-fluid rounded-circle"
-                                                    alt=""
-                                                />
-                                                <h3>Nidhi Subbaiah</h3>
-                                                <h4>Indian Actress</h4>
+                                                <div className="d-flex justify-content-center">
+                                                    <img
+                                                        src={
+                                                            "http://www.sjcealumni.org/assets/content_files/151337948//files/Nidhi-Subbaiah.jpg"
+                                                        }
+                                                        className="testimonial-img img-fluid rounded-circle"
+                                                        alt=""
+                                                    />
+                                                </div>
+
+                                                <h4 className='text-muted text-center'>Nidhi Subbaiah</h4>
+                                                <h5 className='text-muted text-center'>Indian Actress</h5>
                                             </div>
                                             <div className="col-md-9">
                                                 <p>
@@ -1085,7 +1096,7 @@ class Body extends Component {
                     <i className="fa fa-chevron-up"></i>
                 </a>
                 {/* <!-- Uncomment below i you want to use a preloader --> */}
-                {/* <!-- <div id="preloader"></div> -->*/}
+                {/* <div id="preloader"></div> */}
             </div>
         )
     }

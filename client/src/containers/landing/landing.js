@@ -52,12 +52,12 @@ class Landing extends Component {
       logoutBtn = (
         <Fragment>
           <li>
-            <a href={this.onDummyLinkHandler} onClick={this.dashboard}>
+            <a href="/dashboard" onClick={this.dashboard}>
               Dashboard
             </a>
           </li>
           <li>
-            <a href={this.onDummyLinkHandler} onClick={this.logout}>
+            <a href="/logout" onClick={this.logout}>
               Logout
             </a>
           </li>
@@ -67,12 +67,12 @@ class Landing extends Component {
       logoutBtn = (
         <Fragment>
           <li>
-            <a href='/' onClick={this.login}>
+            <a href="/login" onClick={this.login}>
               Login
             </a>
           </li>
           <li>
-            <a href='/' onClick={this.signup}>
+            <a href="/signup" onClick={this.signup}>
               Signup
             </a>
           </li>
@@ -126,7 +126,6 @@ class Landing extends Component {
                     </li>
                   </ul>
                 </li>
-
                 <li>
                   <a href="/something">Contact Us</a>
                 </li>
@@ -136,9 +135,47 @@ class Landing extends Component {
             {/* *<!-- .main-nav --> */}
           </div>
         </header>
+        <nav className="mobile-nav display-lg-none">
+          <ul>
+            <li className="active">
+              <a href="/">Home</a>
+            </li>
+
+            <li>
+              <a href={"#about"}>About Us</a>
+            </li>
+            <li>
+              <a href={"#students"}>Facilities</a>
+            </li>
+            <li>
+              <a href={"#portfolio"}>Faculty</a>
+            </li>
+
+            <li className="drop-down">
+              <a href='/'>Time Table</a>
+              <ul>
+                <li>
+                  <a href='/'>I</a>
+                </li>
+                <li>
+                  <a href='/'>II</a>
+                </li>
+                <li>
+                  <a href='/'>III</a>
+                </li>
+                <li>
+                  <a href='/'>IV</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="/something">Contact Us</a>
+            </li>
+            {logoutBtn}
+          </ul>
+        </nav>
       </div>
     );
-    //``````````````````````````````````
   }
 }
 

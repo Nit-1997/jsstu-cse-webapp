@@ -6,7 +6,7 @@ class Landing extends Component {
     render() {
         return (
             <div>
-                <Navbar/>
+                <Navbar loggedIn={this.props.loggedIn}/>
                 <Body/>
             </div>
         )

@@ -33,7 +33,7 @@ class App extends Component {
 
           <Route
             path="/dashboard"
-            render={() => <Dashboard user={this.props.user} />}
+            render={() => <Dashboard loggedIn={this.props.loggedIn} user={this.props.user} />}
           />
           <Redirect to="/" />
         </Switch>

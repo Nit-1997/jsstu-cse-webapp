@@ -103,10 +103,10 @@ class Landing extends Component {
                   <a href={"#about"}>About Us</a>
                 </li>
                 <li>
-                  <a href={"#students"}>Facilities</a>
+                  <a href={"#services"}>Facilities</a>
                 </li>
                 <li>
-                  <a href={"#portfolio"}>Faculty</a>
+                  <a href={"#testimonials"}>Student Acheivements</a>
                 </li>
 
                 <li className="drop-down">
@@ -127,7 +127,7 @@ class Landing extends Component {
                   </ul>
                 </li>
                 <li>
-                  <a href="/something">Contact Us</a>
+                  <a href={"#contact"}>Contact Us</a>
                 </li>
                 {logoutBtn}
               </ul>
@@ -145,10 +145,10 @@ class Landing extends Component {
               <a href={"#about"}>About Us</a>
             </li>
             <li>
-              <a href={"#students"}>Facilities</a>
+              <a href={"#services"}>Facilities</a>
             </li>
             <li>
-              <a href={"#portfolio"}>Faculty</a>
+              <a href={"#testimonials"}>Student Acheivements</a>
             </li>
 
             <li className="drop-down">
@@ -169,7 +169,7 @@ class Landing extends Component {
               </ul>
             </li>
             <li>
-              <a href="/something">Contact Us</a>
+              <a href={"#contact"}>Contact Us</a>
             </li>
             {logoutBtn}
           </ul>

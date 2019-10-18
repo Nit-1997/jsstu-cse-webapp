@@ -58,7 +58,7 @@ class Body extends Component {
                                     The department is actively involved in International
                                     collaborative research and also in sponsored research
                                     projects through various funding agencies:
-                                    <br/>
+                                    <br />
                                 </p>
                                 <ol typeof='I' className='mb-4'>
                                     <li>
@@ -423,155 +423,137 @@ class Body extends Component {
       Clients Section
     ============================--> */}
 
-
-
-
                     <section id="testimonials" className="section-bg">
                         <div className="container">
                             <header className="section-header">
                                 <h3>Student Achievers</h3>
                             </header>
 
-                            <div id="sliding-feature" className="carousel slide" data-ride="carousel" data-pause="hover" data-keyboard="true"
-                                data-touch="true" data-interval="4000">
-                                <ol className="carousel-indicators">
-                                    <li data-target="#sliding-feature" className="#sliding-feature active" data-slide-to="0"></li>
-                                    <li data-target="#sliding-feature" className="#sliding-feature" data-slide-to="1"></li>
-                                    <li data-target="#sliding-feature" className="#sliding-feature" data-slide-to="2"></li>
-                                </ol>
-                                <div className="carousel-inner">
-                                    <div className="carousel-item active">
-                                        <div className="row">
-                                            <div className="col-md-3">
-                                                <div className="d-flex justify-content-center">
-                                                    <img
-                                                        src={require('../../views/img/akhilesh.jpg')
-                                                        }
-                                                        className="testimonial-img img-fluid rounded-circle"
-                                                        alt="" width="200"
-                                                    />
-                                                </div>
-
-                                                <h4 className='text-center'>Akhilesh Yadav</h4>
-                                                <h5 className="text-muted text-center">Indian Politician</h5>
-                                            </div>
-                                            <div className="col-md-9">
-                                                <p>
-                                                    "Akhilesh Yadav, born on 1 July 1973, is the current
-                                                    and the 20th Chief Minister of the Indian state of
-                                                    Uttar Pradesh. Assuming office on 15 March 2012 at the
-                                                    age of 38, he is the youngest person to have held this
-                                                    office. His first significant success in politics was
-                                                    his election as a member of the Lok Sabha for the
-                                                    constituency of Kannauj in 2000. Akhilesh Yadav was
-                                                    born on 1 July 1973 in Saifai, located in the Etawah
-                                                    District of the Indian state of Uttar Pradesh. He was
-                                                    born to Mulayam Singh Yadav, later a Chief Minister of
-                                                    Uttar Pradesh, and Malti Devi. He was schooled at the
-                                                    Dholpur Military School in Rajasthan, then obtained
-                                                    his Bachelor's and master's degrees in Civil
-                                                    Environmental Engineering from Sri Jayachamarajendra
-                                                    College of Engineering (SJCE), Mysuru. He also has a
-                                                    master's degree in environmental engineering from the
-                                                    University of Sydney, Australia."
+                            <div className="row justify-content-center">
+                                <div className="col-md-12">
+                                    <div className="owl-carousel testimonials-carousel wow fadeInUp">
+                                        <div className="testimonial-item">
+                                            <img
+                                                src={require('../../views/img/akhilesh.jpg')
+                                                }
+                                                className="testimonial-img img-fluid rounded-circle"
+                                                alt="" width="200"
+                                            />
+                                            <h3>Akhilesh Yadav</h3>
+                                            <h4>Indian Politician</h4>
+                                            <p>
+                                                "Akhilesh Yadav, born on 1 July 1973, is the current
+                                                        and the 20th Chief Minister of the Indian state of
+                                                        Uttar Pradesh. He is the youngest person to have held this
+                                                        office. His first significant success in politics was
+                                                        his election as a member of the Lok Sabha for the
+                                                        constituency of Kannauj in 2000.He was
+                                                        born to Mulayam Singh Yadav, later a Chief Minister of
+                                                        Uttar Pradesh, and Malti Devi. He was schooled at the
+                                                        Dholpur Military School in Rajasthan, then obtained
+                                                        his Bachelor's and master's degrees in Civil
+                                                        Environmental Engineering from Sri Jayachamarajendra
+                                                        College of Engineering (SJCE), Mysuru. He also has a
+                                                        master's degree in environmental engineering from the
+                                                        University of Sydney, Australia."
+                        </p>
+                                            <p>
+                                                For more information:
+                          <a href="https://en.wikipedia.org/wiki/Akhilesh_Yadav">
+                                                    "https://en.wikipedia.org/wiki/Akhilesh_Yadav"
+                          </a>
                                             </p>
-                                                <p>
-                                                    For more information:
-                                                    <a href="https://en.wikipedia.org/wiki/Akhilesh_Yadav">
-                                                        "https://en.wikipedia.org/wiki/Akhilesh_Yadav"
-                                                    </a>
-                                                </p>
-                                            </div>
                                         </div>
-                                    </div>
-                                    <div className="carousel-item">
-                                        <div className="row">
-                                            <div className="col-md-3">
-                                                <div className="d-flex justify-content-center">
-                                                    <img
-                                                        src={
-                                                            "http://www.sjcealumni.org/assets/content_files/151337948//files/shanmugam.jpg"
-                                                        }
-                                                        className="testimonial-img img-fluid rounded-circle"
-                                                        alt="" width="90"
-                                                    />
-                                                </div>
-                                                <h5 className='text-center'>Shanmugam Manjunath</h5>
-                                                <h5 className="text-muted text-center">Indian Oil Corporation Officer</h5>
-                                            </div>
-                                            <div className="col-md-9">
-                                                <p>
-                                                    "Shanmugam Manjunath (23 February 1978 – 19 November
-                                                    2005) was a manager (grade A officer) for the Indian
-                                                    Oil Corporation (IOC) who was murdered for sealing a
-                                                    corrupt petrol station in Lakhimpur Kheri, UP. This
-                                                    incident inspired several students at IIM, IIT and
-                                                    other institutes culminating with the IIM students
-                                                    setting up the "The Manjunath Shanmugam Trust".
-                                                    Manjunath did his initial schooling from Kendriya
-                                                    Vidyalaya, BEML Nagar, Kolar Gold Fields, Karnataka.
-                                                    He finished his 10th in 1993 and 12th std in science
-                                                    stream in 1995 from the same school. Later on he did
-                                                    his Computer Science Engineering degree from Sri
-                                                    Jayachamarajendra College of Engineering, Mysore, and
-                                                    an MBA from Indian Institute of Management Lucknow."
-                                                </p>
-                                                <p>
-                                                    For more information:
-                                                    <a href="https://en.wikipedia.org/wiki/Shanmugam_Manjunath">
-                                                        "https://en.wikipedia.org/wiki/Akhilesh_Yadav"
-                                                    </a>
-                                                </p>
-                                            </div>
+
+                                        <div className="testimonial-item">
+                                            <img
+                                                src={
+                                                    "http://www.sjcealumni.org/assets/content_files/151337948//files/shanmugam.jpg"
+                                                }
+                                                className="testimonial-img"
+                                                alt=""
+                                            />
+                                            <h3>Shanmugam Manjunath</h3>
+                                            <h4>Indian Oil Corporation Officer(Grade A)</h4>
+                                            <p>
+                                                "Shanmugam Manjunath (23 February 1978 – 19 November
+                                                2005) was a manager (grade A officer) for the Indian
+                                                Oil Corporation (IOC) who was murdered for sealing a
+                                                corrupt petrol station in Lakhimpur Kheri, UP. This
+                                                incident inspired several students at IIM, IIT and
+                                                other institutes culminating with the IIM students
+                                                setting up the "The Manjunath Shanmugam Trust".
+                                                Manjunath did his initial schooling from Kendriya
+                                                Vidyalaya, BEML Nagar, Kolar Gold Fields, Karnataka.
+                                                He finished his 10th in 1993 and 12th std in science
+                                                stream in 1995 from the same school. Later on he did
+                                                his Computer Science Engineering degree from Sri
+                                                Jayachamarajendra College of Engineering, Mysore, and
+                                                an MBA from Indian Institute of Management Lucknow."
+                        </p>
                                         </div>
-                                    </div>
 
-                                    <div className="carousel-item">
-                                        <div className="row">
-                                            <div className="col-md-3">
-                                                <div className="d-flex justify-content-center">
-                                                    <img
-                                                        src={
-                                                            "http://www.sjcealumni.org/assets/content_files/151337948//files/Nidhi-Subbaiah.jpg"
-                                                        }
-                                                        className="testimonial-img img-fluid rounded-circle"
-                                                        alt=""
-                                                    />
-                                                </div>
+                                        <div className="testimonial-item">
+                                            <img
+                                                src={
+                                                    "http://www.sjcealumni.org/assets/content_files/151337948//files/Nidhi-Subbaiah.jpg"
+                                                }
+                                                className="testimonial-img"
+                                                alt=""
+                                            />
+                                            <h3>Nidhi Subbaiah</h3>
+                                            <h4>Indian Actress</h4>
+                                            <p>
+                                                "Nidhi Subbaiah (born 16 February 1987) is an Indian
+                                                film actress and model, who has appeared in various
+                                                television advertisements and in South Indian Films,
+                                                she rose to fame by acting in few successful Kannada
+                                                movies such as Pancharangi (2010) and Krishnan
+                                                Marriage Story (2011). Both these films brought her
+                                                nominations for South Filmfare Awardsand the latter
+                                                film won her SIIMA Special Appreciation Award-Kannada.
+                                                Nidhi was born on 16 February 1987 in the Kodagu
+                                                district of Karnataka as the only child to Bollachanda
+                                                Subhash Subbaiah and Jhansi Subbaiah. Soon afterwards,
+                                                her family later moved to Gokulam in the historic city
+                                                of Mysore, where she spent most of her childhood and
+                                                pursued her education. An alumnus of St. Joseph's
+                                                Central, Mysore, she went on to study civil
+                                                Engineering from Sri Jayachamarajendra College of
+                                                Engineering (SJCE), Mysore."
+                        </p>
+                                        </div>
 
-                                                <h4 className='text-muted text-center'>Nidhi Subbaiah</h4>
-                                                <h5 className='text-muted text-center'>Indian Actress</h5>
-                                            </div>
-                                            <div className="col-md-9">
-                                                <p>
-                                                    "Coming from a modest background, Mr. B M Jayeshankar
-                                                    always had an urge to be different. After completing
-                                                    his Civil Engineering from Sri. Jaychamarajendra
-                                                    College of Engineering, Mysore he decided to take a
-                                                    plunge in the real estate sector. With a clear focus
-                                                    on good quality and construction, Mr. Jayeshankar
-                                                    formed Adarsh Group in 1988. Combining his innovative
-                                                    ideas with devote attitude towards accommodating
-                                                    customer needs along with an uncompromising outlook
-                                                    towards quality, Adarsh has been able to achieve
-                                                    greater heights in the past 21 years. Today with
-                                                    around 5 million sq.ft of constructed space, Adarsh
-                                                    commands the repute of being an exclusive builder
-                                                    delivering unprecedented superior lifestyles under his
-                                                    command."
-                                                </p>
-                                            </div>
+                                        <div className="testimonial-item">
+                                            <img
+                                                src={
+                                                    "http://www.sjcealumni.org/assets/content_files/151337948//files/Adarsh_Founder.jpg"
+                                                }
+                                                alt=""
+                                                className="testimonial-img"
+                                            />
+                                            <h3>B M Jayeshankar</h3>
+                                            <h4>Builder/Real Estate</h4>
+                                            <p>
+                                                "Coming from a modest background, Mr. B M Jayeshankar
+                                                always had an urge to be different. After completing
+                                                his Civil Engineering from Sri. Jaychamarajendra
+                                                College of Engineering, Mysore he decided to take a
+                                                plunge in the real estate sector. With a clear focus
+                                                on good quality and construction, Mr. Jayeshankar
+                                                formed Adarsh Group in 1988. Combining his innovative
+                                                ideas with devote attitude towards accommodating
+                                                customer needs along with an uncompromising outlook
+                                                towards quality, Adarsh has been able to achieve
+                                                greater heights in the past 21 years. Today with
+                                                around 5 million sq.ft of constructed space, Adarsh
+                                                commands the repute of being an exclusive builder
+                                                delivering unprecedented superior lifestyles under his
+                                                command."
+                        </p>
                                         </div>
                                     </div>
                                 </div>
-                                <a className="carousel-control-prev" href="#sliding-feature" role="button" data-slide="prev">
-                                    <span className="carousel-control-prev-icon" aria-hidden="false"></span>
-                                    <span className="sr-only">previous</span>
-                                </a>
-                                <a className="carousel-control-next" href="#sliding-feature" role="button" data-slide="next">
-                                    <span className="carousel-control-next-icon" aria-hidden="false"></span>
-                                    <span className="sr-only">next</span>
-                                </a>
                             </div>
                         </div>
                     </section>
@@ -774,7 +756,7 @@ class Body extends Component {
                                     <div className="client-logo">
                                         <img
                                             src={
-                                                "http://jssstuniv.in/wp-content/uploads/2017/08/placement_4.png"
+                                                "https://yt3.ggpht.com/a/AGF-l7-AXHAlBMHkxZZN2521nZp3YQ995sCWnQ0IIw=s900-c-k-c0xffffffff-no-rj-mo"
                                             }
                                             className="img-fluid"
                                             alt=""
@@ -810,7 +792,7 @@ class Body extends Component {
                                     <div className="client-logo">
                                         <img
                                             src={
-                                                "http://jssstuniv.in/wp-content/uploads/2017/08/placement_7.png"
+                                                "https://sandiegoisbetter.com/wp-content/uploads/2016/10/Tacos-and-Tech-UltimateLifeHack-Event-Intuit-Logo-Icon-1.png"
                                             }
                                             className="img-fluid"
                                             alt=""
@@ -822,7 +804,7 @@ class Body extends Component {
                                     <div className="client-logo">
                                         <img
                                             src={
-                                                "http://jssstuniv.in/wp-content/uploads/2017/08/placement_8.png"
+                                                "https://yt3.ggpht.com/a/AGF-l7-BBIcC888A2qYc3rB44rST01IEYDG3uzbU_A=s900-c-k-c0xffffffff-no-rj-mo"
                                             }
                                             className="img-fluid"
                                             alt=""
@@ -835,6 +817,17 @@ class Body extends Component {
                                         <img
                                             src={
                                                 "http://jssstuniv.in/wp-content/uploads/2017/08/placement_9.png"
+                                            }
+                                            className="img-fluid"
+                                            alt=""
+                                        />
+                                    </div>
+                                </div>
+                                <div className="col-lg-3 col-md-4 col-xs-6">
+                                    <div className="client-logo">
+                                        <img
+                                            src={
+                                                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTH_CK5Brz0nkScXcr-blUCRbjhsngiLHAsiVCk4SjtGMozYIyw"
                                             }
                                             className="img-fluid"
                                             alt=""
@@ -1077,12 +1070,6 @@ class Body extends Component {
                             &copy; Copyright <strong>JSS S&TU</strong>. All Rights Reserved
               </div>
                         <div className="credits">
-                            {/* <!--
-          All the links in the footer should remain intact.
-          You can delete the links only if you purchased the pro version.
-          Licensing information: https://bootstrapmade.com/license/
-          Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=NewBiz
-        --> */}
                             Designed by{" "}
                             <a href="https://sites.google.com/view/dscjssuniversity/home">
                                 DSC JSSSTU
@@ -1090,7 +1077,6 @@ class Body extends Component {
                         </div>
                     </div>
                 </footer>
-                {/* <!-- #footer --> */}
 
                 <a href="#about" className="back-to-top">
                     <i className="fa fa-chevron-up"></i>

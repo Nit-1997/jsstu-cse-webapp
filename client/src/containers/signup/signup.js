@@ -86,8 +86,8 @@ class Signup extends Component {
                         </div>
                        
                          <div className="form-group">
-                          <select onChange={this.onChangeHandler} id="designation" className="form-control extra" required autoFocus>
-                              <option disabled selected>Designation</option>
+                          <select onChange={this.onChangeHandler} id="designation" className="form-control extra" defaultValue={"designation"} required autoFocus>
+                              <option disabled value="designation">Designation</option>
                               <option value="Associate_prof">Associate Professor</option>
                               <option value="Head_of_Dept">Head of Department</option>
                               <option value="Assistant_prof">Assistant Professor</option>
@@ -96,8 +96,8 @@ class Signup extends Component {
                         </div>
 
                         <div className="form-group">
-                          <select onChange={this.onChangeHandler} id="mode" className="form-control extra" required autoFocus>
-                              <option disabled selected>Mode</option>
+                          <select onChange={this.onChangeHandler} id="mode" className="form-control extra" defaultValue={"mode"} required autoFocus>
+                              <option disabled value="mode">Mode</option>
                               <option value="faculty">Faculty</option>
                               <option value="hod">Hod</option>
                               <option value="admin">Admin</option>

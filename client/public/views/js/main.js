@@ -1,16 +1,15 @@
-(function($) {
-  "use strict";
+$(function($) {
 
   // Preloader (if the #preloader div exists)
-  $(window).on("load", function() {
-    if ($("#preloader").length) {
-      $("#preloader")
-        .delay(100)
-        .fadeOut("slow", function() {
-          $(this).remove();
-        });
-    }
-  });
+  // $(window).on("load", function() {
+  //   if ($("#preloader").length) {
+  //     $("#preloader")
+  //       .delay(100)
+  //       .fadeOut("slow", function() {
+  //         $(this).remove();
+  //       }, 1000);
+  //   }
+  // });
 
   // Back to top button
   $(window).scroll(function() {
@@ -44,9 +43,9 @@
   // Smooth scroll for the navigation and links with .scrollto classes
   $(".main-nav a, .mobile-nav a, .scrollto").on("click", function() {
     if (
-      location.pathname.replace(/^\//, "") ==
+      location.pathname.replace(/^\//, "") ===
         this.pathname.replace(/^\//, "") &&
-      location.hostname == this.hostname
+      location.hostname === this.hostname
     ) {
       var target = $(this.hash);
       if (target.length) {
@@ -133,4 +132,4 @@
     loop: true,
     items: 1
   });
-})(jQuery);
+});

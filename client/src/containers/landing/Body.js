@@ -977,28 +977,6 @@ class Body extends Component {
                                         measures to improve quality of workforce.
                                     </p>
                                 </div>
-
-                                {/* <div className="col-lg-2 col-md-6 d-none d-md-block footer-links">
-                    <h4>Useful Links</h4>
-                    <ul>
-                      <li>
-                        <a href="#1">Home</a>
-                      </li>
-                      <li>
-                        <a href="#1">About us</a>
-                      </li>
-                      <li>
-                        <a href="#1">Services</a>
-                      </li>
-                      <li>
-                        <a href="#1">Terms of service</a>
-                      </li>
-                      <li>
-                        <a href="#1">Privacy policy</a>
-                      </li>
-                    </ul>
-                  </div> */}
-
                                 <div className="col-lg-4 col-md-6 footer-contact">
                                     <h3>Contact Us</h3>
                                     <p>

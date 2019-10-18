@@ -65,7 +65,7 @@ class Login extends Component {
                         </div>
                         <button className="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit">Sign in</button>
                         <div className="text-center">
-                          <a style={{'color':'black'}} className="small" href={this.onForgotPasswordHandler}>Forgot password?</a>
+                          <a style={{'color':'black'}} className="small" href='{this.onForgotPasswordHandler}'>Forgot password?</a>
                         </div>
          </form>
       )

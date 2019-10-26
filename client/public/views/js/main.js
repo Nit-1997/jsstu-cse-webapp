@@ -128,8 +128,30 @@ $(function($) {
   // Testimonials carousel (uses the Owl Carousel library)
   $(".testimonials-carousel").owlCarousel({
     autoplay: true,
+    autoplayTimeout: 4000,
     dots: true,
     loop: true,
     items: 1
   });
+
+  $(".company-carousel").owlCarousel({
+    loop:true,
+    margin:10,
+    autoplay:true,
+    autoplayTimeout: 600,
+    merge:true,
+    responsive:{
+        1000: {
+          items: 4
+        },
+        678:{
+          items: 3,
+          mergeFit:true
+        },
+        0:{
+          items: 1,
+            mergeFit:false
+        }
+    }
+});
 });

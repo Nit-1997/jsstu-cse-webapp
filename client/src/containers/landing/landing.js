@@ -1,5 +1,5 @@
 import React, { Fragment, Component } from "react";
-// import { Route, Switch,Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import * as actions from "../../store/actions/index";
@@ -52,14 +52,14 @@ class Landing extends Component {
       logoutBtn = (
         <Fragment>
           <li>
-            <a href="/dashboard" onClick={this.dashboard}>
+            <Link to="/dashboard" onClick={this.dashboard}>
               Dashboard
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="/logout" onClick={this.logout}>
+            <Link to="/logout" onClick={this.logout}>
               Logout
-            </a>
+            </Link>
           </li>
         </Fragment>
       );
@@ -67,14 +67,14 @@ class Landing extends Component {
       logoutBtn = (
         <Fragment>
           <li>
-            <a href="/login" onClick={this.login}>
+            <Link to="/login" onClick={this.login}>
               Login
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="/signup" onClick={this.signup}>
+            <Link to="/signup" onClick={this.signup}>
               Signup
-            </a>
+            </Link>
           </li>
         </Fragment>
       );
@@ -82,9 +82,9 @@ class Landing extends Component {
     return (
       <div className="app">
         <header id="header" className="fixed-top">
-          <div className="container">
+          <div className="px-4">
             <div className="logo float-left">
-              <a href="#intro" className="scrollto">
+              <a href="/" className="scrollto">
                 <img
                   src={require("../../views/img/jss_logo.png")}
                   alt="logo"
@@ -96,7 +96,7 @@ class Landing extends Component {
             <nav className="main-nav float-right d-none d-lg-block">
               <ul>
                 <li className="active">
-                  <a href="/">Home</a>
+                  <Link to="/">Home</Link>
                 </li>
 
                 <li>
@@ -138,7 +138,7 @@ class Landing extends Component {
         <nav className="mobile-nav display-lg-none">
           <ul>
             <li className="active">
-              <a href="/">Home</a>
+              <Link to="/">Home</Link>
             </li>
 
             <li>

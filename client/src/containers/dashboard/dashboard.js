@@ -3,6 +3,8 @@ import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import "./dashboard.css";
 import Navbar from "../landing/landing";
+import Footer from "../landing/Footer";
+
 
 class Dashboard extends Component {
   constructor() {
@@ -118,6 +120,7 @@ class Dashboard extends Component {
             </div>
           </section>
         </div>
+        <Footer/>
       </div>
     );
   }

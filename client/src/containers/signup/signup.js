@@ -8,6 +8,7 @@ import ErrorImg from '../../assets/error.png';
 import * as actions from '../../store/actions/index';
 import {connect} from 'react-redux';
 import Navbar from '../landing/landing';
+import Footer from "../landing/Footer";
 
 class Signup extends Component {
   constructor() {
@@ -158,6 +159,7 @@ class Signup extends Component {
             </div>
           </div>
        </div>
+       <Footer/>
      </div>
     );
   }

@@ -965,9 +965,10 @@ h6 {
 }
 
 #team img {
-  width: 200px;
-  height: 200px;
+  width: 300px;
+  height: 300px;
   object-fit: scale-down;
+  background-size: cover;
 }
 
 #team .member {
@@ -1234,7 +1235,7 @@ h6 {
 
 #footer .footer-top {
   background: #004a99;
-  padding: 20px 0 10px 0;
+  padding: 40px 0 20px 0;
 }
 
 #footer .footer-top .footer-info {
@@ -1299,40 +1300,6 @@ h6 {
   background: #424242;
 }
 
-#footer .footer-top h4 {
-  font-size: 14px;
-  font-weight: bold;
-  color: #fff;
-  text-transform: uppercase;
-  position: relative;
-  padding-bottom: 10px;
-}
-
-#footer .footer-top .footer-links {
-  margin-bottom: 30px;
-}
-
-#footer .footer-top .footer-links ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-#footer .footer-top .footer-links ul li {
-  padding: 8px 0;
-}
-
-#footer .footer-top .footer-links ul li:first-child {
-  padding-top: 0;
-}
-
-#footer .footer-top .footer-links ul a {
-  color: #ecf5ff;
-}
-
-#footer .footer-top .footer-links ul a:hover {
-  color: #74b5fc;
-}
 
 #footer .footer-top .footer-contact {
   margin-bottom: 30px;

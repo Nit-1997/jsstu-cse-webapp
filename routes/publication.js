@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Publication = require('../models/publication');
+const jwt = require('jsonwebtoken');
 
 // Fetch all publication
 router.get('/', (req, res)=> {
@@ -11,7 +12,7 @@ router.get('/', (req, res)=> {
 })
 
 // adding publication
-router.post('/add', (req, res) => {
+router.post('/add', (req, res, next) => {
     const publication = new Publication({
         author: req.body.author,
         title: req.body.title,

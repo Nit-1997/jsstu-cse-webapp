@@ -15,6 +15,9 @@ class Landing extends Component {
     if (this.props.loggedIn) {
       this.props.onLogout();
     }
+    this.props.history.push({
+      pathname: "/logout"
+    })
   };
 
   login = event => {
@@ -37,6 +40,7 @@ class Landing extends Component {
       pathname: "/dashboard"
     });
   };
+  
 
   onDummyLinkHandler = () => {
     console.log("Dummy link clicked!");
@@ -84,13 +88,13 @@ class Landing extends Component {
         <header id="header" className="fixed-top">
           <div className="px-4">
             <div className="logo float-left">
-              <a href="/" className="scrollto">
+              <Link to="/" className="scrollto">
                 <img
                   src={require("../../views/img/jss_logo.png")}
                   alt="logo"
                   className="img-fluid d-block"
                 />
-              </a>
+              </Link>
             </div>
 
             <nav className="main-nav float-right d-none d-lg-block">
@@ -98,7 +102,6 @@ class Landing extends Component {
                 <li className="active">
                   <Link to="/">Home</Link>
                 </li>
-
                 <li>
                   <a href={"#about"}>About Us</a>
                 </li>
@@ -127,7 +130,7 @@ class Landing extends Component {
                   </ul>
                 </li>
                 <li>
-                  <a href={"#contact"}>Contact Us</a>
+                  <a href="#contact">Contact Us</a>
                 </li>
                 {logoutBtn}
               </ul>

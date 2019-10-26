@@ -1,4 +1,4 @@
-$(function($) {
+$(function ($) {
 
   // Preloader (if the #preloader div exists)
   // $(window).on("load", function() {
@@ -12,14 +12,14 @@ $(function($) {
   // });
 
   // Back to top button
-  $(window).scroll(function() {
+  $(window).scroll(function () {
     if ($(this).scrollTop() > 100) {
       $(".back-to-top").fadeIn("slow");
     } else {
       $(".back-to-top").fadeOut("slow");
     }
   });
-  $(".back-to-top").click(function() {
+  $(".back-to-top").click(function () {
     $("html, body").animate({ scrollTop: 0 }, 1500, "easeInOutExpo");
     return false;
   });
@@ -28,7 +28,7 @@ $(function($) {
   new WOW().init();
 
   // Header scroll class
-  $(window).scroll(function() {
+  $(window).scroll(function () {
     if ($(this).scrollTop() > 100) {
       $("#header").addClass("header-scrolled");
     } else {
@@ -41,10 +41,10 @@ $(function($) {
   }
 
   // Smooth scroll for the navigation and links with .scrollto classes
-  $(".main-nav a, .mobile-nav a, .scrollto").on("click", function() {
+  $(".main-nav a, .mobile-nav a, .scrollto").on("click", function () {
     if (
       location.pathname.replace(/^\//, "") ===
-        this.pathname.replace(/^\//, "") &&
+      this.pathname.replace(/^\//, "") &&
       location.hostname === this.hostname
     ) {
       var target = $(this.hash);
@@ -89,10 +89,10 @@ $(function($) {
   var main_nav = $(".main-nav, .mobile-nav");
   var main_nav_height = $("#header").outerHeight();
 
-  $(window).on("scroll", function() {
+  $(window).on("scroll", function () {
     var cur_pos = $(this).scrollTop();
 
-    nav_sections.each(function() {
+    nav_sections.each(function () {
       var top = $(this).offset().top - main_nav_height,
         bottom = top + $(this).outerHeight();
 
@@ -113,11 +113,11 @@ $(function($) {
   });
 
   // Porfolio isotope and filter
-  $(window).on("load", function() {
+  $(window).on("load", function () {
     var portfolioIsotope = $(".portfolio-container").isotope({
       itemSelector: ".portfolio-item"
     });
-    $("#portfolio-flters li").on("click", function() {
+    $("#portfolio-flters li").on("click", function () {
       $("#portfolio-flters li").removeClass("filter-active");
       $(this).addClass("filter-active");
 
@@ -135,23 +135,44 @@ $(function($) {
   });
 
   $(".company-carousel").owlCarousel({
-    loop:true,
-    margin:10,
-    autoplay:true,
+    loop: true,
+    margin: 10,
+    autoplay: true,
     autoplayTimeout: 600,
-    merge:true,
-    responsive:{
-        1000: {
-          items: 4
-        },
-        678:{
-          items: 3,
-          mergeFit:true
-        },
-        0:{
-          items: 1,
-            mergeFit:false
-        }
+    merge: true,
+    responsive: {
+      1000: {
+        items: 4
+      },
+      678: {
+        items: 3,
+        mergeFit: true
+      },
+      0: {
+        items: 1,
+        mergeFit: false
+      }
     }
-});
+  });
+
+  $(".clubs-carousel").owlCarousel({
+    loop: true,
+    margin: 10,
+    autoplay: true,
+    autoplayTimeout: 1200,
+    merge: true,
+    responsive: {
+      1000: {
+        items: 4
+      },
+      678: {
+        items: 3,
+        mergeFit: true
+      },
+      0: {
+        items: 1,
+        mergeFit: false
+      }
+    }
+  });
 });

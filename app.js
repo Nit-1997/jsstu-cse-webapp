@@ -27,7 +27,8 @@ const publication = require('./routes/publication');
 const securedRoutes = require('./routes/securedRoutes');
 
 app.use('/', user);
-app.use('/publication' ,publication);
+// app.use('/publication' ,passport.authenticate('jwt', {session: false}), publication);
+app.use('/publication', publication);
 app.use('/', passport.authenticate('jwt', {session: false}), securedRoutes);
 
 app.get("*", (req, res) => {

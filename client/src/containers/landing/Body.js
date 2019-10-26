@@ -573,8 +573,7 @@ class Body extends Component {
                   </p>
                             </div>
 
-                            <div className="row">
-                                <div className="col-lg-3 col-md-6 wow fadeInUp">
+                            <div className="row no-gutters owl-carousel clubs-carousel wow fadeInUp">
                                     <div className="member">
                                         <img
                                             src={
@@ -604,12 +603,6 @@ class Body extends Component {
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-
-                                <div
-                                    className="col-lg-3 col-md-6 wow fadeInUp"
-                                    data-wow-delay="0.1s"
-                                >
                                     <div className="member">
                                         <img
                                             src={
@@ -639,16 +632,10 @@ class Body extends Component {
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-
-                                <div
-                                    className="col-lg-3 col-md-6 wow fadeInUp"
-                                    data-wow-delay="0.2s"
-                                >
-                                    <div className="member">
+                                    <div className="member text-center">
                                         <img
                                             src={
-                                                "https://avatars0.githubusercontent.com/u/37414607?s=460&v=4"
+                                                "https://samfoss15.azurewebsites.net/images/lcclogo.png"
                                             }
                                             className="img-fluid"
                                             alt=""
@@ -674,12 +661,6 @@ class Body extends Component {
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-
-                                <div
-                                    className="col-lg-3 col-md-6 wow fadeInUp"
-                                    data-wow-delay="0.3s"
-                                >
                                     <div className="member">
                                         <img
                                             src={
@@ -709,7 +690,6 @@ class Body extends Component {
                                             </div>
                                         </div>
                                     </div>
-                                </div>
                             </div>
                         </div>
                     </section>

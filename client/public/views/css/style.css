@@ -965,9 +965,10 @@ h6 {
 }
 
 #team img {
-  width: 200px;
-  height: 200px;
+  width: 300px;
+  height: 300px;
   object-fit: scale-down;
+  background-size: cover;
 }
 
 #team .member {
@@ -1234,7 +1235,7 @@ h6 {
 
 #footer .footer-top {
   background: #004a99;
-  padding: 60px 0 30px 0;
+  padding: 40px 0 20px 0;
 }
 
 #footer .footer-top .footer-info {
@@ -1264,8 +1265,7 @@ h6 {
 #footer .footer-top .social-links a {
   font-size: 18px;
   display: inline-block;
-  background: #007bff;
-  color: #fff;
+  background: #f8f8f8;
   line-height: 1;
   padding: 8px 0;
   margin-right: 4px;
@@ -1276,45 +1276,30 @@ h6 {
   transition: 0.3s;
 }
 
+.fa-twitter{
+  color: #04ffd5;
+}
+
+.fa-facebook{
+  color: #003166;
+}
+
+.fa-instagram{
+  color: #ff4800;
+}
+
+.fa-youtube-play{
+  color: #ff0000;
+}
+
+.fa-linkedin{
+  color: #00f7ff;
+}
+
 #footer .footer-top .social-links a:hover {
-  background: #0067d5;
-  color: #fff;
+  background: #424242;
 }
 
-#footer .footer-top h4 {
-  font-size: 14px;
-  font-weight: bold;
-  color: #fff;
-  text-transform: uppercase;
-  position: relative;
-  padding-bottom: 10px;
-}
-
-#footer .footer-top .footer-links {
-  margin-bottom: 30px;
-}
-
-#footer .footer-top .footer-links ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-#footer .footer-top .footer-links ul li {
-  padding: 8px 0;
-}
-
-#footer .footer-top .footer-links ul li:first-child {
-  padding-top: 0;
-}
-
-#footer .footer-top .footer-links ul a {
-  color: #ecf5ff;
-}
-
-#footer .footer-top .footer-links ul a:hover {
-  color: #74b5fc;
-}
 
 #footer .footer-top .footer-contact {
   margin-bottom: 30px;

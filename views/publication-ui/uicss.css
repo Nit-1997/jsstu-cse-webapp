@@ -104,12 +104,7 @@
     margin: 10px;
     border: 1px solid #495057;
     border-radius: 5px;
-    box-shadow: 2px solid #222427;
   }
-  .publication:hover {
-    box-shadow: 2px solid #222427;
-  }
-  
   
   .publication a{
       display: flex;

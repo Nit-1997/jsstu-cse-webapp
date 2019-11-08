@@ -4,7 +4,7 @@ export class Footer extends Component {
 
     render() {
         return (
-            <footer id="footer">
+            <footer id="footer" className="mt-auto">
                 <div className="footer-top p-4 mt-4">
                     <div className="row" style={{'margin': '0'}}>
                         <div className="col-lg-5 col-md-6 d-none d-md-block footer-info">

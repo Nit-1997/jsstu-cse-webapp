@@ -11,6 +11,16 @@ router.get('/', (req, res) => {
         })
 })
 
+
+// Fetch a user publication
+router.get('/:id', (req, res) => {
+    Publication.find({ user: req.params.id })
+        .sort({ date: -1 })
+        .then(publications => {
+            res.json(publications);
+        })
+})
+
 // adding publication
 router.post('/add', (req, res, next) => {
     console.log(req.body)

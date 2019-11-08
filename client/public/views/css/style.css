@@ -1296,6 +1296,10 @@ h6 {
   color: #00f7ff;
 }
 
+#footer{
+  margin-top: auto;
+}
+
 #footer .footer-top .social-links a:hover {
   background: #424242;
 }

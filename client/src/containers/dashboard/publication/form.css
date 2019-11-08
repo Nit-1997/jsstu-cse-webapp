@@ -83,9 +83,9 @@ button{
 }
 
 .publication-title{
-    font-size: 35px;
+    font-size: 2rem;
     font-weight: bold;
-    font-family:'Raleway',sans-serif;
+    font-family: 'Nunito', sans-serif;
     text-decoration:none;
     margin-bottom:15px;
 }
@@ -95,9 +95,12 @@ button{
 }
 
 
-@media(max-width:510px){
+@media(max-width:600px){
     .publication-form{
-        width:80%;
+        width: 100%;
+    }
+    .publication-title{
+      font-size: 1.4rem;
     }
     .publications{
         grid-template-columns: 90%;
@@ -105,27 +108,9 @@ button{
 }
 
 .card{
-  box-shadow: 2px 2px 5px 1px grey;
+  box-shadow: 2px 2px 10px 1px grey;
 }
 
 
-.btn-custom {
-  z-index: 10;
-  position: fixed;
-  top: 110px;
-  right: 20px;
-  width: 50px;
-  height: 50px;
-  color: #fff;
-  background: orangered;
-  border-radius: 50%;
-}
 
-
-.btn-custom:hover {
-  opacity: 0.7;
-}
-
-.btn-custom:focus{
-  outline: none;
-}
+.material-icons.md-48 { font-size: 54px; }

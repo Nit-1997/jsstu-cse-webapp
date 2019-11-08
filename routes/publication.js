@@ -4,11 +4,11 @@ const Publication = require('../models/publication');
 const jwt = require('jsonwebtoken');
 
 // Fetch all publication
-router.get('/', (req, res)=> {
+router.get('/', (req, res) => {
     Publication.find({})
-    .then(publications => {
-        res.json(publications);
-    })
+        .then(publications => {
+            res.json(publications);
+        })
 })
 
 // adding publication

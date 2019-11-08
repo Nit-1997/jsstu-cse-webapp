@@ -12,6 +12,13 @@ class Dashboard extends Component {
     this.state = {};
   }
 
+  publications = event => {
+    event.preventDefault();
+    this.props.history.push({
+      pathname: "/publications"
+    });
+  };
+
   componentDidMount() {}
 
   componentDidUpdate() {}
@@ -58,7 +65,7 @@ class Dashboard extends Component {
                     <i className="fa fa-pencil card-img-top"></i>
                   </div>
                   <h4 className="title">
-                    <a href={this.onDummyHandler}>Publications</a>
+                    <a href={this.onDummyHandler} onClick={this.publications}>Publications</a>
                   </h4>
                 </div>
               </div>

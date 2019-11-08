@@ -16,6 +16,10 @@ const PublicationSchema = new Schema({
     },
     date: {
         type: Date
+    },
+    user: {
+        type: String,
+        required: true
     }
 })
 

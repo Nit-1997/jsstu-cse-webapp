@@ -14,8 +14,8 @@ export default class App extends Component {
     this.state = {
       cards: [],
       publication: {},
-      "baseUrl": 'https://jssstu-cs.herokuapp.com',
-      // "baseUrl": "http://localhost:4000",
+      // "baseUrl": 'https://jssstu-cs.herokuapp.com',
+      "baseUrl": "http://localhost:4000",
       "adding": false
     }
   }
@@ -63,6 +63,7 @@ export default class App extends Component {
 
 
   render() {
+    console.log(this.props.user)
     return (
       <div>
         <Navbar loggedIn={this.props.loggedIn} />
@@ -71,9 +72,9 @@ export default class App extends Component {
                 <button onClick={this.addPublish} className="btn btn-custom text-center float-right"><i className="fa fa-plus" id="plus"></i></button>
             </div>
             <div className="clearfix"></div>
-            {this.state.adding && (<Form publish={this.publish}/>)}
+            {this.state.adding && (<Form publish={this.publish} user={this.props.user}/>)}
         </div>
-        <Cardlist publications={this.state.cards} removeCard={this.removeCard} publishEdit={this.publishEdit}/>
+        <Cardlist user={this.props.user} publications={this.state.cards} removeCard={this.removeCard} publishEdit={this.publishEdit}/>
         <Footer />
       </div>
     )

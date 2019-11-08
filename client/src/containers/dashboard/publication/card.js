@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import "./form.css"
 import moment from 'moment'
 export default class Card extends Component {
@@ -11,6 +11,7 @@ export default class Card extends Component {
       author: author,
       link: link,
       date: date,
+      user: this.props.user._id,
       isediting: false
     }
     this.myChangeHandler = this.myChangeHandler.bind(this);
@@ -67,8 +68,14 @@ export default class Card extends Component {
   }
 
   notEditing = () => {
-    const { _id, title, author, link, date } = this.props.card;
+    const { _id, title, author, link, date, user } = this.props.card;
     const { removeCard } = this.props;
+    console.log(this.props.user, this.props.card)
+    var changeBtn="";
+    if(user === this.props.user._id){
+      changeBtn=(<Fragment><button href="#1" className="btn btn-outline-info" onClick={() => this.editpublication(_id)}><i className="fa fa-pencil"></i>&emsp;Edit</button>
+      <button href="#3" className="btn btn-outline-danger" onClick={() => removeCard(_id)}><i className="fa fa-trash"></i>&emsp;Delete</button></Fragment>)
+    }
     return (<section className="container mt-4">
       <div className="row">
         <div className="col-md-12">
@@ -80,9 +87,8 @@ export default class Card extends Component {
                 <a href={link} target="_blank" rel="noopener noreferrer" className="text-center">{link}</a>
               </div>
               <div className="mr-4 mt-6">
-                <button href="#1" className="btn btn-outline-info" onClick={() => this.editpublication(_id)}><i className="fa fa-pencil"></i>&emsp;Edit</button>
-                <button href="#2" className="btn btn-outline-warning" onClick={() => this.printApiHandler(_id)}><i className="fas fa-print"></i>&emsp;Print Pdf</button>
-                <button href="#3" className="btn btn-outline-danger" onClick={() => removeCard(_id)}><i className="fa fa-trash"></i>&emsp;Delete</button>
+              <button href="#2" className="btn btn-outline-warning" onClick={() => this.printApiHandler(_id)}><i className="fas fa-print"></i>&emsp;Print Pdf</button>
+                {changeBtn}
               </div>
             </div>
             <div className="card-footer">

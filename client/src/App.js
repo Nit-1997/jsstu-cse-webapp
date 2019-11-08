@@ -35,7 +35,7 @@ class App extends Component {
             path="/dashboard"
             render={() => <Dashboard loggedIn={this.props.loggedIn} user={this.props.user} />}
           />
-          <Route path="/publications" render={() => <Publication loggedIn={this.props.loggedIn} />}
+          <Route path="/publications" render={() => <Publication loggedIn={this.props.loggedIn} user={this.props.user}/>}
           />
           <Redirect to="/" />
         </Switch>

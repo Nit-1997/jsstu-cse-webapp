@@ -10,7 +10,8 @@ export default class Form extends Component {
       title: "",
       author: "",
       link: "",
-      date: ""
+      date: "", 
+      user: this.props.user._id
     }
     this.myChangeHandler = this.myChangeHandler.bind(this);
   }

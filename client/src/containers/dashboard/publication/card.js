@@ -40,7 +40,6 @@ export default class Card extends Component {
   }
 
   editing = () => {
-    const { _id } = this.props.card;
     return (<div className="container">
       <div className="row">
         <div className="col-md-8 mt m-auto">

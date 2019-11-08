@@ -21,7 +21,7 @@ export default class App extends Component {
   }
 
   getPublications = () => {
-    axios.get(this.state.baseUrl + '/publication')
+    axios.get(this.state.baseUrl + '/publication/' + this.props.user._id)
       .then(publications => {
         this.setState({ cards: publications.data })
       })
@@ -41,24 +41,32 @@ export default class App extends Component {
 
 
   publish = (data) => {
+    this.addPublish();
     axios.post(this.state.baseUrl + '/publication/add', data)
       .then(publication => {
         this.getPublications();
-        this.addPublish();
       })
   }
 
   publishEdit = (data, id) => {
     console.log(data, id)
-    axios.post(this.state.baseUrl + '/publication/edit/'+id, data)
-    .then(publication => {
-      console.log('editing')
-      this.getPublications();
-    })
+    axios.post(this.state.baseUrl + '/publication/edit/' + id, data)
+      .then(publication => {
+        console.log('editing')
+        this.getPublications();
+      })
   }
 
   addPublish = () => {
-    this.setState({adding: !this.state.adding})
+    this.setState({ adding: !this.state.adding })
+  }
+
+  addBtn = () => {
+    return (this.state.adding ? <a href="#2" onClick={this.addPublish}> <i className="material-icons md-48">
+    cancel
+    </i></a> : <a href="#2" onClick={this.addPublish}> <i className="material-icons md-48">
+        add_circle
+  </i></a>)
   }
 
 
@@ -67,14 +75,13 @@ export default class App extends Component {
     return (
       <div>
         <Navbar loggedIn={this.props.loggedIn} />
-        <div className="container mt">
-            <div className="mt-4">
-                <button onClick={this.addPublish} className="btn btn-custom text-center float-right"><i className="fa fa-plus" id="plus"></i></button>
-            </div>
-            <div className="clearfix"></div>
-            {this.state.adding && (<Form publish={this.publish} user={this.props.user}/>)}
+        <div className="container mt mb-4">
+          <div className="mt-4 text-center">
+            {this.addBtn()}
+          </div>
+          {this.state.adding && (<Form publish={this.publish} user={this.props.user} />)}
         </div>
-        <Cardlist user={this.props.user} publications={this.state.cards} removeCard={this.removeCard} publishEdit={this.publishEdit}/>
+        <Cardlist user={this.props.user} publications={this.state.cards} removeCard={this.removeCard} publishEdit={this.publishEdit} />
         <Footer />
       </div>
     )

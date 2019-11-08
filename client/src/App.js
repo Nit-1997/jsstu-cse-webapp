@@ -5,6 +5,7 @@ import Signup from "./containers/signup/signup";
 import Login from "./containers/login/login";
 import Landing from "./containers/landing/LandingPage";
 import Dashboard from "./containers/dashboard/dashboard";
+import Publication from './containers/dashboard/publication/publication';
 import { connect } from "react-redux";
 import * as actions from "./store/actions/index";
 
@@ -18,7 +19,7 @@ class App extends Component {
     this.props.onTryAutoSignIn();
   }
 
-  componentDidUpdate() {}
+  componentDidUpdate() { }
 
   render() {
     let routes;
@@ -34,7 +35,8 @@ class App extends Component {
             path="/dashboard"
             render={() => <Dashboard loggedIn={this.props.loggedIn} user={this.props.user} />}
           />
-
+          <Route path="/publications" render={() => <Publication loggedIn={this.props.loggedIn} />}
+          />
           <Redirect to="/" />
         </Switch>
       );

@@ -76,3 +76,7 @@ span.tags {
 .fas, .box .fa {
   color: green;
 }
+
+a{
+  cursor: pointer;
+}

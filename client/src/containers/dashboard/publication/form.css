@@ -110,6 +110,7 @@ button{
 
 
 .btn-custom {
+  z-index: 10;
   position: fixed;
   top: 110px;
   right: 20px;

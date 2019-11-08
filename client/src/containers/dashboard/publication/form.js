@@ -32,7 +32,7 @@ export default class Form extends Component {
     return (
       <div className="container">
         <div className="row">
-          <div className="col-md-8 m-auto">
+          <div className="col-md-8 wow slideInLeft col-sm-12 m-auto">
             <form className="publication-form" onSubmit={this.mySubmitHandler}>
               <label htmlFor="title">Title</label>
               <input type="text" name="title" value={this.state.title} placeholder="Enter Publication Title" id="title" onChange={this.myChangeHandler} required></input>

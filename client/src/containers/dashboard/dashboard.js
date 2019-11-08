@@ -60,7 +60,7 @@ class Dashboard extends Component {
           <section id="dashboard" className="section-bg">
             <div className="row">
               <div className="col-md-6 col-lg-5 offset-lg-1">
-                <div className="box">
+                <div className="box" onClick={this.publications}>
                   <div className="icon">
                     <i className="fa fa-pencil card-img-top"></i>
                   </div>

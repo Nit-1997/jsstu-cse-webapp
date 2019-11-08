@@ -4,20 +4,22 @@ const Publication = require('../models/publication');
 const jwt = require('jsonwebtoken');
 
 // Fetch all publication
-router.get('/', (req, res)=> {
+router.get('/', (req, res) => {
     Publication.find({})
-    .then(publications => {
-        res.json(publications);
-    })
+        .then(publications => {
+            res.json(publications);
+        })
 })
 
 // adding publication
 router.post('/add', (req, res, next) => {
+    console.log(req.body)
     const publication = new Publication({
         author: req.body.author,
         title: req.body.title,
         link: req.body.link,
-        date: req.body.date
+        date: req.body.date,
+        user: req.body.user
     })
     publication.save()
         .then(publication => {
@@ -29,11 +31,12 @@ router.post('/add', (req, res, next) => {
 router.post('/edit/:id', (req, res) => {
     Publication.findById(req.params.id)
         .then(publication => {
-            const { author, title, link, date } = req.body;
+            const { author, title, link, date, user } = req.body;
             publication.author = author;
             publication.title = title;
             publication.link = link;
             publication.date = date;
+            publication.user = user
             publication.save()
                 .then(publication => {
                     res.status(200).send('Publication edited successfully');

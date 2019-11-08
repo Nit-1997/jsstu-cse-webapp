@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import "./form.css"
-import axios from 'axios';
 
 
 export default class Form extends Component {
@@ -15,7 +14,7 @@ export default class Form extends Component {
     }
     this.myChangeHandler = this.myChangeHandler.bind(this);
   }
-  
+
   myChangeHandler = (event) => {
     let nam = event.target.name;
     let val = event.target.value;

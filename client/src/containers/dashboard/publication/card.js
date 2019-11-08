@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import "./form.css"
 import moment from 'moment'
-import axios from 'axios';
 export default class Card extends Component {
 
   constructor(props) {

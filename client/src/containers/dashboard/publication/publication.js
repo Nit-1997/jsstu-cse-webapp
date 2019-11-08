@@ -14,8 +14,8 @@ export default class App extends Component {
     this.state = {
       cards: [],
       publication: {},
-      // "baseUrl": 'https://jssstu-cs.herokuapp.com',
-      "baseUrl": "http://localhost:4000",
+      "baseUrl": 'https://jssstu-cs.herokuapp.com',
+      // "baseUrl": "http://localhost:4000",
       "adding": false
     }
   }

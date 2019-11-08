@@ -63,7 +63,7 @@ export default class App extends Component {
 
 
   render() {
-    console.log(this.props.user)
+    // console.log(this.props.user)
     return (
       <div>
         <Navbar loggedIn={this.props.loggedIn} />

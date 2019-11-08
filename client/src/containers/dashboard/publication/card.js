@@ -70,7 +70,7 @@ export default class Card extends Component {
   notEditing = () => {
     const { _id, title, author, link, date, user } = this.props.card;
     const { removeCard } = this.props;
-    console.log(this.props.user, this.props.card)
+    // console.log(this.props.user, this.props.card)
     var changeBtn="";
     if(user === this.props.user._id){
       changeBtn=(<Fragment><button href="#1" className="btn btn-outline-info" onClick={() => this.editpublication(_id)}><i className="fa fa-pencil"></i>&emsp;Edit</button>

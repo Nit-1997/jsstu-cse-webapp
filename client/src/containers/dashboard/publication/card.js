@@ -50,7 +50,7 @@ export default class Card extends Component {
     return (
       <div className="container">
         <div className="row">
-          <div className="col-md-8 wow bounceInUp mt m-auto">
+          <div className="col-md-8 wow slideInLeft mt m-auto">
             <div className="card mt-2">
               <div className="card-body">
                 <form
@@ -150,7 +150,7 @@ export default class Card extends Component {
     return (
       <section className="container mt-4">
         <div className="row">
-          <div className="col-md-12 wow fadeInUp">
+          <div className="col-md-12 wow slideInLeft">
             <div className="card">
               <div className="card-body">
                 <h5 className="text-center publication-title">{title}</h5>

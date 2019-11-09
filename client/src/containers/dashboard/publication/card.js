@@ -138,10 +138,10 @@ export default class Card extends Component {
       <Document>
         <Page size="A4" style={docStyles.page}>
           <View style={docStyles.section}>
-            <Text>Section #1</Text>
-          </View>
-          <View style={docStyles.section}>
-            <Text>Section #2</Text>
+            <Text> Title: {title}</Text>
+            <Text> Author: {author}</Text>
+            <Text> Link: {link}</Text>
+            <Text> Date: {moment(date).format("Do MMM YYYY")}</Text>
           </View>
         </Page>
       </Document>
@@ -176,7 +176,7 @@ export default class Card extends Component {
                     <i className="fas fa-print"></i>&emsp;
                     <PDFDownloadLink
                       document={<PubDoc />}
-                      fileName="somename.pdf"
+                      fileName="publications.pdf"
                     >
                       {({ blob, url, loading, error }) =>
                         loading ? "Loading pdf" : "Print PDF"

@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
 import Card from "./card"
+import Spinner from '../../spinner/Spinners'
 import "./form.css"
 
 export default class Cardlist extends Component {
 
     render() {
+        if(this.props.loading) return <Spinner/>
         return (
             <section className="cardList">
                 {

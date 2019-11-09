@@ -16,7 +16,8 @@ export default class App extends Component {
       publication: {},
       "baseUrl": 'https://jssstu-cs.herokuapp.com',
       // "baseUrl": "http://localhost:4000",
-      "adding": false
+      "adding": false,
+      loading: false
     }
   }
 
@@ -28,32 +29,43 @@ export default class App extends Component {
   }
 
   componentDidMount() {
-    this.getPublications();
+    this.isLoading();
+    axios.get(this.state.baseUrl + '/publication/' + this.props.user._id)
+      .then(publications => {
+        this.setState({ cards: publications.data })
+        this.isLoading();
+      })
   }
 
 
   removeCard = id => {
+    this.isLoading();
     axios.post(this.state.baseUrl + '/publication/delete/' + id)
       .then(publication => {
         this.getPublications();
+        this.isLoading();
       })
   }
 
 
   publish = (data) => {
     this.addPublish();
+    this.isLoading();
     axios.post(this.state.baseUrl + '/publication/add', data)
       .then(publication => {
         this.getPublications();
+        this.isLoading();
       })
   }
 
   publishEdit = (data, id) => {
-    console.log(data, id)
+    // console.log(data, id)
+    this.isLoading();
     axios.post(this.state.baseUrl + '/publication/edit/' + id, data)
       .then(publication => {
         console.log('editing')
         this.getPublications();
+        this.isLoading();
       })
   }
 
@@ -61,8 +73,12 @@ export default class App extends Component {
     this.setState({ adding: !this.state.adding })
   }
 
+  isLoading = () => {
+    this.setState({loading: !this.state.loading})
+  }
+
   addBtn = () => {
-    return (this.state.adding ? <a href="#2" onClick={this.addPublish}> <i className="material-icons md-48">
+    return (this.state.adding ? <a href="#2" onClick={this.addPublish}> <i id="close" className="material-icons md-48">
     cancel
     </i></a> : <a href="#2" onClick={this.addPublish}> <i className="material-icons md-48">
         add_circle
@@ -81,7 +97,7 @@ export default class App extends Component {
           </div>
           {this.state.adding && (<Form publish={this.publish} user={this.props.user} />)}
         </div>
-        <Cardlist user={this.props.user} publications={this.state.cards} removeCard={this.removeCard} publishEdit={this.publishEdit} />
+        <Cardlist loading={this.state.loading} user={this.props.user} publications={this.state.cards} removeCard={this.removeCard} publishEdit={this.publishEdit} />
         <Footer />
       </div>
     )

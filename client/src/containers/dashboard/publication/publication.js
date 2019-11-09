@@ -78,11 +78,11 @@ export default class App extends Component {
   }
 
   addBtn = () => {
-    return (this.state.adding ? <a href="#2" onClick={this.addPublish}> <i id="close" className="material-icons md-48">
+    return (!this.state.loading && (this.state.adding ? <a href="#2" onClick={this.addPublish}> <i id="close" className="material-icons md-48">
     cancel
     </i></a> : <a href="#2" onClick={this.addPublish}> <i className="material-icons md-48">
         add_circle
-  </i></a>)
+  </i></a>))
   }
 
 

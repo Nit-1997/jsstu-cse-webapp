@@ -6,7 +6,7 @@ import "./form.css"
 export default class Cardlist extends Component {
 
     render() {
-        if(this.props.loading) return <Spinner/>
+        if(this.props.loader) return <Spinner/>
         return (
             <section className="cardList">
                 {

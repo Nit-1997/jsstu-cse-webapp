@@ -17,7 +17,7 @@ export default class App extends Component {
       "baseUrl": 'https://jssstu-cs.herokuapp.com',
       // "baseUrl": "http://localhost:4000",
       "adding": false,
-      loading: false
+      loader: false
     }
   }
 
@@ -74,11 +74,11 @@ export default class App extends Component {
   }
 
   isLoading = () => {
-    this.setState({loading: !this.state.loading})
+    this.setState({loader: !this.state.loader})
   }
 
   addBtn = () => {
-    return (!this.state.loading && (this.state.adding ? <a href="#2" onClick={this.addPublish}> <i id="close" className="material-icons md-48">
+    return (!this.state.loader && (this.state.adding ? <a href="#2" onClick={this.addPublish}> <i id="close" className="material-icons md-48">
     cancel
     </i></a> : <a href="#2" onClick={this.addPublish}> <i className="material-icons md-48">
         add_circle
@@ -97,7 +97,7 @@ export default class App extends Component {
           </div>
           {this.state.adding && (<Form publish={this.publish} user={this.props.user} />)}
         </div>
-        <Cardlist loading={this.state.loading} user={this.props.user} publications={this.state.cards} removeCard={this.removeCard} publishEdit={this.publishEdit} />
+        <Cardlist loader={this.state.loader} user={this.props.user} publications={this.state.cards} removeCard={this.removeCard} publishEdit={this.publishEdit} />
         <Footer />
       </div>
     )

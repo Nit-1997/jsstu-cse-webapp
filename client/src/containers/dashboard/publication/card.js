@@ -1,10 +1,18 @@
-import React, { Component } from 'react'
-import "./form.css"
-import moment from 'moment'
-export default class Card extends Component {
+import React, { Component } from "react";
+import "./form.css";
+import moment from "moment";
+import {
+  PDFDownloadLink,
+  Document,
+  Page,
+  Text,
+  View,
+  StyleSheet
+} from "@react-pdf/renderer";
 
+export default class Card extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     const { title, author, link, date } = this.props.card;
     this.state = {
       title: title,
@@ -13,31 +21,30 @@ export default class Card extends Component {
       date: date,
       user: this.props.user._id,
       isediting: false
-    }
+    };
     this.myChangeHandler = this.myChangeHandler.bind(this);
   }
 
   editpublication = () => {
-    this.setState({ isediting: !this.state.isediting })
-  }
+    this.setState({ isediting: !this.state.isediting });
+  };
 
+  printApiHandler = id => {
+    console.log("print");
+  };
 
-  printApiHandler = (id) => {
-    console.log('print');
-  }
-
-  mySubmitHandler = (event) => {
+  mySubmitHandler = event => {
     event.preventDefault();
     this.props.publishEdit(this.state, this.props.card._id);
-    this.editpublication()
-  }
+    this.editpublication();
+  };
 
-  myChangeHandler = (event) => {
+  myChangeHandler = event => {
     let nam = event.target.name;
     let val = event.target.value;
     this.setState({ [nam]: val });
-    console.log(this.state, this.props)
-  }
+    console.log(this.state, this.props);
+  };
 
   editing = () => {
     return (<div className="container">
@@ -63,42 +70,105 @@ export default class Card extends Component {
           </div>
         </div>
       </div>
-    </div>)
-  }
+    </div>
+    );
+  };
 
   notEditing = () => {
     const { _id, title, author, link, date } = this.props.card;
     const { removeCard } = this.props;
     // console.log(this.props.user, this.props.card)
 
-    return (<section className="container mt-4">
-      <div className="row">
-        <div className="col-md-12 wow slideInLeft">
-          <div className="card">
-            <div className="card-body">
-              <h5 className="text-center publication-title">{title}</h5>
-              <p className="text-center text-muted">{moment(date).format("Do MMM YYYY")}</p>
-              <div className="text-center mt-2">
-                <a href={link} target="_blank" rel="noopener noreferrer" className="btn btn-outline-dark">View Publication</a>
+    const docStyles = StyleSheet.create({
+      page: {
+        flexDirection: "row",
+        backgroundColor: "#E4E4E4"
+      },
+      section: {
+        margin: 10,
+        padding: 10,
+        flexGrow: 1
+      }
+    });
+
+    // Create Document Component
+    const PubDoc = () => (
+      <Document>
+        <Page size="A4" style={docStyles.page}>
+          <View style={docStyles.section}>
+            <Text> Title: {title}</Text>
+            <Text> Author: {author}</Text>
+            <Text> Link: {link}</Text>
+            <Text> Date: {moment(date).format("Do MMM YYYY")}</Text>
+          </View>
+        </Page>
+      </Document>
+    );
+
+    return (
+      <section className="container mt-4">
+        <div className="row">
+          <div className="col-md-12 wow fadeInUp">
+            <div className="card">
+              <div className="card-body">
+                <h5 className="text-center publication-title">{title}</h5>
+                <p className="text-center text-muted">
+                  {moment(date).format("Do MMM YYYY")}
+                </p>
+                <div className="text-center mt-2">
+                  <a
+                    href={link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-outline-dark"
+                  >
+                    View Publication
+                  </a>
+                </div>
+                <div className="mt-4 text-center">
+                  <button
+                    href="#2"
+                    className="btn btn-outline-warning"
+                    onClick={() => this.printApiHandler(_id)}
+                  >
+                    <i className="fas fa-print"></i>&emsp;
+                    <PDFDownloadLink
+                      document={PubDoc()}
+                      fileName="publications.pdf"
+                    >
+                      {({ blob, url, loading, error }) =>
+                        loading ? "Loading pdf" : "Print PDF"
+                      }
+                    </PDFDownloadLink>
+                    &emsp;
+                  </button>
+                  <button
+                    href="#1"
+                    className="btn btn-outline-info"
+                    onClick={() => this.editpublication(_id)}
+                  >
+                    <i className="fa fa-pencil"></i>&emsp;Edit&emsp;
+                  </button>
+                  <button
+                    href="#3"
+                    className="btn btn-outline-danger"
+                    onClick={() => removeCard(_id)}
+                  >
+                    <i className="fa fa-trash"></i>&emsp;Delete&emsp;
+                  </button>
+                </div>
               </div>
-              <div className="mt-4 text-center">
-                <button href="#2" className="btn btn-outline-warning" onClick={() => this.printApiHandler(_id)}><i className="fas fa-print"></i>&emsp;Print Pdf&emsp;</button>
-                <button href="#1" className="btn btn-outline-info" onClick={() => this.editpublication(_id)}><i className="fa fa-pencil"></i>&emsp;Edit&emsp;</button>
-                <button href="#3" className="btn btn-outline-danger" onClick={() => removeCard(_id)}><i className="fa fa-trash"></i>&emsp;Delete&emsp;</button>
+              <div className="card-footer">
+                <h5 className="text-muted"> Author: {author}</h5>
               </div>
-            </div>
-            <div className="card-footer">
-              <h5 className="text-muted"> Author: {author}</h5>
             </div>
           </div>
         </div>
-      </div>
-    </section>);
-  }
+      </section>
+    );
+  };
 
   render() {
-    return (
-      this.state.isediting ? this.editing() : this.notEditing()
-    )
+    return this.state.isediting ? this.editing() : this.notEditing();
   }
 }

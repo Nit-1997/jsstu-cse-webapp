@@ -28,7 +28,6 @@ export default class Card extends Component {
 
   mySubmitHandler = (event) => {
     event.preventDefault();
-    console.log(this.state)
     this.props.publishEdit(this.state, this.props.card._id);
     this.editpublication()
   }

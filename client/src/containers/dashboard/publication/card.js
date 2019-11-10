@@ -9,6 +9,7 @@ import {
   View,
   StyleSheet
 } from "@react-pdf/renderer";
+
 export default class Card extends Component {
   constructor(props) {
     super(props);
@@ -34,7 +35,6 @@ export default class Card extends Component {
 
   mySubmitHandler = event => {
     event.preventDefault();
-    console.log(this.state);
     this.props.publishEdit(this.state, this.props.card._id);
     this.editpublication();
   };
@@ -150,7 +150,7 @@ export default class Card extends Component {
     return (
       <section className="container mt-4">
         <div className="row">
-          <div className="col-md-12 wow slideInLeft">
+          <div className="col-md-12 wow fadeInUp">
             <div className="card">
               <div className="card-body">
                 <h5 className="text-center publication-title">{title}</h5>
@@ -175,7 +175,7 @@ export default class Card extends Component {
                   >
                     <i className="fas fa-print"></i>&emsp;
                     <PDFDownloadLink
-                      document={<PubDoc />}
+                      document={PubDoc()}
                       fileName="publications.pdf"
                     >
                       {({ blob, url, loading, error }) =>

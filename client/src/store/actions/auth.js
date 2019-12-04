@@ -2,6 +2,7 @@ import * as actionTypes from './actionTypes';
 import axios from 'axios';
 
 const baseurl = 'https://jssstu-cs.herokuapp.com';
+// const baseurl = "http://localhost:4000"
 
 export const signupStart = () => {
 	return {

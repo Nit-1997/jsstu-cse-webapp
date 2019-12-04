@@ -4,33 +4,74 @@ import { withRouter } from "react-router-dom";
 import "./dashboard.css";
 import Navbar from "../landing/landing";
 import Footer from "../landing/Footer";
+import Axios from "axios";
 
 
 class Dashboard extends Component {
   constructor() {
     super();
-    this.state = {};
+    this.state = {
+      subjects: [],
+      "baseUrl": 'https://jssstu-cs.herokuapp.com',
+      // "baseUrl": "http://localhost:4000",
+    };
   }
 
   publications = event => {
     event.preventDefault();
     this.props.history.push({
-      pathname: "/publications"
+      pathname: "/dashboard/publications"
     });
   };
 
-  componentDidMount() {}
+  researchs = event => {
+    event.preventDefault();
+    this.props.history.push({
+      pathname: "/dashboard/researchs"
+    });
+  };
 
-  componentDidUpdate() {}
+  awards = event => {
+    event.preventDefault();
+    this.props.history.push({
+      pathname: "/dashboard/awards"
+    });
+  };
+
+  training = event => {
+    event.preventDefault();
+    this.props.history.push({
+      pathname: "/dashboard/training"
+    });
+  };
+
+  subject = event => {
+    event.preventDefault();
+    this.props.history.push({
+      pathname: "/dashboard/subject",
+    });
+  };
+
+  componentDidMount() {
+    Axios.get(this.state.baseUrl + '/subject/' + this.props.user._id)
+      .then(subjects => {
+        // console.log(subjects);
+        this.setState({ subjects: subjects.data })
+        // console.log(this.state.Subjects)
+      })
+  }
+
+  componentDidUpdate() { }
 
   onDummyHandler = () => {
     console.log("Card Clicked");
   };
 
   render() {
+    const subjects = this.state.subjects;
     return (
       <div className="Dashboard  mt-2">
-      <Navbar loggedIn={this.props.loggedIn}/>
+        <Navbar loggedIn={this.props.loggedIn} />
         <div className="container mt-4">
           <div className="box well">
             <div className="row">
@@ -38,7 +79,7 @@ class Dashboard extends Component {
                 <img
                   src={this.props.user.image}
                   alt=""
-                  className="img-fluid mx-auto d-block rounded-circle"
+                  className="img-fluid mx-auto rounded-circle"
                 />
               </div>
               <div className="col-md-8">
@@ -49,10 +90,11 @@ class Dashboard extends Component {
                 </p>
                 <p>
                   <strong>Subjects Handled: </strong>
-                  <span className="tags">CS330</span>{" "}
-                  <span className="tags">CS520</span>{" "}
-                  <span className="tags">CS540</span>{" "}
-                  <span className="tags">CS710</span>{" "}
+                  {
+                    subjects.map(subject => (
+                      <span key={subject._id}><span className="tags">{subject.code}</span> <span> </span></span>
+                    ))
+                  }
                 </p>
               </div>
             </div>
@@ -70,7 +112,7 @@ class Dashboard extends Component {
                 </div>
               </div>
               <div className="col-md-6 col-lg-5">
-                <div className="box">
+                <div className="box" onClick={this.researchs}>
                   <div className="icon">
                     <i className="fas fa-search card-img-top"></i>
                   </div>
@@ -81,16 +123,16 @@ class Dashboard extends Component {
               </div>
 
               <div className="col-md-6 col-lg-5 offset-lg-1">
-                <div className="box">
+                <div className="box" onClick={this.awards}>
                   <div className="icon">
-                  <i className="fa fa-trophy " aria-hidden="true"></i>                  </div>
+                    <i className="fa fa-trophy " aria-hidden="true"></i>                  </div>
                   <h4 className="title">
                     <a href={this.onDummyHandler}>Achievments & Awards</a>
                   </h4>
                 </div>
               </div>
               <div className="col-md-6 col-lg-5">
-                <div className="box">
+                <div className="box" onClick={this.subject}>
                   <div className="icon">
                     <i className="fas fa-chalkboard-teacher card-img-top"></i>
                   </div>
@@ -101,7 +143,7 @@ class Dashboard extends Component {
               </div>
 
               <div className="col-md-6 col-lg-5 offset-lg-1">
-                <div className="box">
+                <div className="box" onClick={this.training}>
                   <div className="icon">
                     <i className="fas fa-chalkboard card-img-top"></i>
                   </div>
@@ -127,7 +169,7 @@ class Dashboard extends Component {
             </div>
           </section>
         </div>
-        <Footer/>
+        <Footer />
       </div>
     );
   }

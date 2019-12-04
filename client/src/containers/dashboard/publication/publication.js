@@ -1,9 +1,11 @@
 import React, { Component } from "react";
-import "./form.css";
-import Cardlist from "./cardList";
+import "../awards/form.css";
+// import Cardlist from "./cardList"
 import Form from "./form";
 import Navbar from "../../landing/landing";
 import Footer from "../../landing/Footer";
+import Spinner from "../../spinner/Spinners";
+import Card from "./card";
 import axios from "axios";
 
 export default class App extends Component {
@@ -65,7 +67,8 @@ export default class App extends Component {
       .post(this.state.baseUrl + "/publication/edit/" + id, data)
       .then(publication => {
         console.log("editing");
-        this.getPublications();
+        // this.getPublications();
+        this.componentDidMount();
         this.isLoading();
       });
   };
@@ -99,6 +102,17 @@ export default class App extends Component {
 
   render() {
     // console.log(this.props.user)
+    if (this.state.loader) {
+      return (
+        <div>
+          <Navbar loggedIn={this.props.loggedIn} />
+          <div style={{ marginTop: "100px" }}>
+            <Spinner />
+          </div>
+          <Footer />
+        </div>
+      );
+    }
     return (
       <div>
         <Navbar loggedIn={this.props.loggedIn} />
@@ -108,13 +122,15 @@ export default class App extends Component {
             <Form publish={this.publish} user={this.props.user} />
           )}
         </div>
-        <Cardlist
-          loader={this.state.loader}
-          user={this.props.user}
-          publications={this.state.cards}
-          removeCard={this.removeCard}
-          publishEdit={this.publishEdit}
-        />
+        {this.state.cards.map(card => (
+          <Card
+            key={card._id}
+            card={card}
+            user={this.props.user}
+            removeCard={this.removeCard}
+            publishEdit={this.publishEdit}
+          ></Card>
+        ))}
         <Footer />
       </div>
     );

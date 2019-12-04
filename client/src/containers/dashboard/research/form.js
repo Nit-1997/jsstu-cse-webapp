@@ -24,7 +24,7 @@ export default class Form extends Component {
 
   mySubmitHandler = (event) => {
     event.preventDefault();
-    this.props.publish(this.state)
+    this.props.research(this.state)
     this.setState({ title: '', author: '', link: '', date: '' })
   }
 
@@ -50,7 +50,6 @@ export default class Form extends Component {
                 </form>
               </div>
             </div>
-
             <div className="clearfix"></div>
           </div>
         </div>

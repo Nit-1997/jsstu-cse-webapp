@@ -6,6 +6,10 @@ import Login from "./containers/login/login";
 import Landing from "./containers/landing/LandingPage";
 import Dashboard from "./containers/dashboard/dashboard";
 import Publication from "./containers/dashboard/publication/publication";
+import Research from "./containers/dashboard/research/research";
+import Awards from "./containers/dashboard/awards/Awards";
+import Training from "./containers/dashboard/trainingCon/Training";
+import Subject from "./containers/dashboard/subjects/Subject";
 import Faculty from "./containers/faculty/faculty";
 import { connect } from "react-redux";
 import * as actions from "./store/actions/index";
@@ -34,6 +38,7 @@ class App extends Component {
           />
           <Route
             path="/dashboard"
+            exact
             render={() => (
               <Dashboard
                 loggedIn={this.props.loggedIn}
@@ -42,12 +47,36 @@ class App extends Component {
             )}
           />
           <Route
-            path="/publications"
+            path="/dashboard/publications"
             render={() => (
               <Publication
                 loggedIn={this.props.loggedIn}
                 user={this.props.user}
               />
+            )}
+          />
+          <Route
+            path="/dashboard/researchs"
+            render={() => (
+              <Research loggedIn={this.props.loggedIn} user={this.props.user} />
+            )}
+          />
+          <Route
+            path="/dashboard/awards"
+            render={() => (
+              <Awards loggedIn={this.props.loggedIn} user={this.props.user} />
+            )}
+          />
+          <Route
+            path="/dashboard/training"
+            render={() => (
+              <Training loggedIn={this.props.loggedIn} user={this.props.user} />
+            )}
+          />
+          <Route
+            path="/dashboard/subject"
+            render={() => (
+              <Subject loggedIn={this.props.loggedIn} user={this.props.user} />
             )}
           />
           <Route path="/faculty" render={() => <Faculty />} />

@@ -4,11 +4,11 @@
   background-color: #ecf5ff;
 }
 
-.Dashboard img {
+/* .Dashboard img {
   width: 150px;
   height: 150px;
   object-fit: scale-down;
-}
+} */
 
 span.tags {
   background: #1abc9c;
@@ -73,10 +73,11 @@ span.tags {
   margin-bottom: 0;
 }
 
-.fas, .box .fa {
+.fas,
+.box .fa {
   color: green;
 }
 
-a{
+a {
   cursor: pointer;
 }

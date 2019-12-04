@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "../awards/form.css";
+import "./form.css";
 import moment from "moment";
 import {
   PDFDownloadLink,
@@ -13,11 +13,9 @@ import {
 export default class Card extends Component {
   constructor(props) {
     super(props);
-    const { title, author, link, date } = this.props.card;
+    const { title, date } = this.props.card;
     this.state = {
       title: title,
-      author: author,
-      link: link,
       date: date,
       user: this.props.user._id,
       isediting: false
@@ -29,7 +27,7 @@ export default class Card extends Component {
 
   }
 
-  editpublication = () => {
+  editaward = () => {
     this.setState({ isediting: !this.state.isediting });
   };
 
@@ -39,8 +37,8 @@ export default class Card extends Component {
 
   mySubmitHandler = event => {
     event.preventDefault();
-    this.props.publishEdit(this.state, this.props.card._id);
-    this.editpublication();
+    this.props.awardEdit(this.state, this.props.card._id);
+    this.editaward();
   };
 
   myChangeHandler = event => {
@@ -58,16 +56,12 @@ export default class Card extends Component {
             <div className="card-body">
               <form className="dashboard-form" onSubmit={this.mySubmitHandler}>
                 <label htmlFor="title">Title</label>
-                <input type="text" name="title" value={this.state.title} placeholder="Enter Publication Title" id="title" onChange={this.myChangeHandler} required></input>
-                <label htmlFor="author">Author</label>
-                <input type="text" name="author" value={this.state.author} placeholder="Enter Author's name" id="author" onChange={this.myChangeHandler} required></input>
-                <label htmlFor="link">Link</label>
-                <input type="text" name="link" value={this.state.link} placeholder="Enter Publication Link" id="link" onChange={this.myChangeHandler} required></input>
+                <input type="text" name="title" value={this.state.title} placeholder="Enter Award Title" id="title" onChange={this.myChangeHandler} required></input>
                 <label htmlFor="date">Date</label>
                 <input type="date" name="date" value={moment(this.state.date).format("YYYY-MM-DD")} id="date" onChange={this.myChangeHandler} required></input>
                 <div className="form-group text-center">
                   <button type="submit" className="btn btn-success">submit</button>
-                  <button onClick={this.editpublication} className="btn btn-warning">cancel</button>
+                  <button onClick={this.editaward} className="btn btn-warning">cancel</button>
                 </div>
               </form>
             </div>
@@ -79,7 +73,7 @@ export default class Card extends Component {
   };
 
   notEditing = () => {
-    const { _id, title, author, link, date } = this.props.card;
+    const { _id, title, date } = this.props.card;
     const { removeCard } = this.props;
     // console.log(this.props.user, this.props.card)
 
@@ -101,8 +95,6 @@ export default class Card extends Component {
         <Page size="A4" style={docStyles.page}>
           <View style={docStyles.section}>
             <Text> Title: {title}</Text>
-            <Text> Author: {author}</Text>
-            <Text> Link: {link}</Text>
             <Text> Date: {moment(date).format("Do MMM YYYY")}</Text>
           </View>
         </Page>
@@ -119,16 +111,6 @@ export default class Card extends Component {
                 <p className="text-center text-muted">
                   {moment(date).format("Do MMM YYYY")}
                 </p>
-                <div className="text-center mt-2">
-                  <a
-                    href={link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn btn-outline-dark"
-                  >
-                    View Publication
-                  </a>
-                </div>
                 <div className="mt-4 text-center">
                   <button
                     href="#2"
@@ -138,7 +120,7 @@ export default class Card extends Component {
                     <i className="fas fa-print"></i>&emsp;
                     <PDFDownloadLink
                       document={PubDoc()}
-                      fileName="publications.pdf"
+                      fileName="awards.pdf"
                     >
                       {({ blob, url, loading, error }) =>
                         loading ? "Loading pdf" : "Print PDF"
@@ -149,7 +131,7 @@ export default class Card extends Component {
                   <button
                     href="#1"
                     className="btn btn-outline-info"
-                    onClick={() => this.editpublication(_id)}
+                    onClick={() => this.editaward(_id)}
                   >
                     <i className="fa fa-pencil"></i>&emsp;Edit&emsp;
                   </button>
@@ -161,9 +143,6 @@ export default class Card extends Component {
                     <i className="fa fa-trash"></i>&emsp;Delete&emsp;
                   </button>
                 </div>
-              </div>
-              <div className="card-footer">
-                <h5 className="text-muted"> Author: {author}</h5>
               </div>
             </div>
           </div>

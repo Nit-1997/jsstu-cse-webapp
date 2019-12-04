@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import "../awards/form.css";
-import moment from "moment";
+import "../awards/form.css"
 import {
   PDFDownloadLink,
   Document,
@@ -13,12 +12,12 @@ import {
 export default class Card extends Component {
   constructor(props) {
     super(props);
-    const { title, author, link, date } = this.props.card;
+    const { title, code, year, section } = this.props.card;
     this.state = {
       title: title,
-      author: author,
-      link: link,
-      date: date,
+      code: code,
+      year: year,
+      section: section,
       user: this.props.user._id,
       isediting: false
     };
@@ -29,7 +28,7 @@ export default class Card extends Component {
 
   }
 
-  editpublication = () => {
+  editsubject = () => {
     this.setState({ isediting: !this.state.isediting });
   };
 
@@ -39,15 +38,15 @@ export default class Card extends Component {
 
   mySubmitHandler = event => {
     event.preventDefault();
-    this.props.publishEdit(this.state, this.props.card._id);
-    this.editpublication();
+    this.props.subjectEdit(this.state, this.props.card._id);
+    this.editsubject();
   };
 
   myChangeHandler = event => {
     let nam = event.target.name;
     let val = event.target.value;
     this.setState({ [nam]: val });
-    console.log(this.state, this.props);
+    // console.log(this.state, this.props);
   };
 
   editing = () => {
@@ -58,16 +57,35 @@ export default class Card extends Component {
             <div className="card-body">
               <form className="dashboard-form" onSubmit={this.mySubmitHandler}>
                 <label htmlFor="title">Title</label>
-                <input type="text" name="title" value={this.state.title} placeholder="Enter Publication Title" id="title" onChange={this.myChangeHandler} required></input>
-                <label htmlFor="author">Author</label>
-                <input type="text" name="author" value={this.state.author} placeholder="Enter Author's name" id="author" onChange={this.myChangeHandler} required></input>
-                <label htmlFor="link">Link</label>
-                <input type="text" name="link" value={this.state.link} placeholder="Enter Publication Link" id="link" onChange={this.myChangeHandler} required></input>
-                <label htmlFor="date">Date</label>
-                <input type="date" name="date" value={moment(this.state.date).format("YYYY-MM-DD")} id="date" onChange={this.myChangeHandler} required></input>
+                <input type="text" name="title" value={this.state.title} placeholder="Enter Subject Title" id="title" onChange={this.myChangeHandler} required></input>
+                <label htmlFor="code">Subject Code</label>
+                <input type="text" placeholder="Enter Subject Code" name="code" value={this.state.code} id="code" onChange={this.myChangeHandler} required></input>
+                <div className="input-group mb-3">
+                  <div className="input-group-prepend">
+                    <label className="input-group-text" htmlFor="inputGroupSelect01">Year</label>
+                  </div>
+                  <select name="year" onChange={this.myChangeHandler} defaultValue={this.state.year} className="custom-select" id="inputGroupSelect01">
+                    <option value="0" disabled>Choose...</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                  </select>
+                </div>
+                <div className="input-group mb-3">
+                  <div className="input-group-prepend">
+                    <label className="input-group-text" htmlFor="inputGroupSelect02">Section</label>
+                  </div>
+                  <select name="section" onChange={this.myChangeHandler} defaultValue={this.state.section} className="custom-select" id="inputGroupSelect01">
+                    <option value="0" disabled>Choose...</option>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                  </select>
+                </div>
                 <div className="form-group text-center">
                   <button type="submit" className="btn btn-success">submit</button>
-                  <button onClick={this.editpublication} className="btn btn-warning">cancel</button>
+                  <button onClick={this.editsubject} className="btn btn-warning">cancel</button>
                 </div>
               </form>
             </div>
@@ -79,7 +97,7 @@ export default class Card extends Component {
   };
 
   notEditing = () => {
-    const { _id, title, author, link, date } = this.props.card;
+    const { _id, title, code, year, section } = this.props.card;
     const { removeCard } = this.props;
     // console.log(this.props.user, this.props.card)
 
@@ -100,10 +118,10 @@ export default class Card extends Component {
       <Document>
         <Page size="A4" style={docStyles.page}>
           <View style={docStyles.section}>
-            <Text> Title: {title}</Text>
-            <Text> Author: {author}</Text>
-            <Text> Link: {link}</Text>
-            <Text> Date: {moment(date).format("Do MMM YYYY")}</Text>
+            <Text> Subject Title: {title}</Text>
+            <Text> Subject Code: {code}</Text>
+            <Text> Year: {year}</Text>
+            <Text> Section: {section}</Text>
           </View>
         </Page>
       </Document>
@@ -115,20 +133,9 @@ export default class Card extends Component {
           <div className="col-md-12 wow slideInLeft">
             <div className="card">
               <div className="card-body">
-                <h5 className="text-center dashboard-title">{title}</h5>
-                <p className="text-center text-muted">
-                  {moment(date).format("Do MMM YYYY")}
-                </p>
-                <div className="text-center mt-2">
-                  <a
-                    href={link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn btn-outline-dark"
-                  >
-                    View Publication
-                  </a>
-                </div>
+                <h5 className="text-center dashboard-title">{title} {code}</h5>
+                <p className="text-center">Year: {year} Section: {section}</p>
+
                 <div className="mt-4 text-center">
                   <button
                     href="#2"
@@ -138,7 +145,7 @@ export default class Card extends Component {
                     <i className="fas fa-print"></i>&emsp;
                     <PDFDownloadLink
                       document={PubDoc()}
-                      fileName="publications.pdf"
+                      fileName="subjects.pdf"
                     >
                       {({ blob, url, loading, error }) =>
                         loading ? "Loading pdf" : "Print PDF"
@@ -149,7 +156,7 @@ export default class Card extends Component {
                   <button
                     href="#1"
                     className="btn btn-outline-info"
-                    onClick={() => this.editpublication(_id)}
+                    onClick={() => this.editsubject(_id)}
                   >
                     <i className="fa fa-pencil"></i>&emsp;Edit&emsp;
                   </button>
@@ -161,9 +168,6 @@ export default class Card extends Component {
                     <i className="fa fa-trash"></i>&emsp;Delete&emsp;
                   </button>
                 </div>
-              </div>
-              <div className="card-footer">
-                <h5 className="text-muted"> Author: {author}</h5>
               </div>
             </div>
           </div>

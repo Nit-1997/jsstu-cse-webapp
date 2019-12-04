@@ -1,6 +1,4 @@
 import React, { Component } from 'react'
-import "../awards/form.css"
-// import Cardlist from "./cardList"
 import Form from "./form"
 import Navbar from '../../landing/landing'
 import Footer from '../../landing/Footer'
@@ -15,7 +13,7 @@ export default class App extends Component {
     super(props);
     this.state = {
       cards: [],
-      publication: {},
+      training: {},
       "baseUrl": 'https://jssstu-cs.herokuapp.com',
       // "baseUrl": "http://localhost:4000",
       "adding": false,
@@ -23,18 +21,18 @@ export default class App extends Component {
     }
   }
 
-  getPublications = () => {
-    axios.get(this.state.baseUrl + '/publication/' + this.props.user._id)
-      .then(publications => {
-        this.setState({ cards: publications.data })
+  getTrainings = () => {
+    axios.get(this.state.baseUrl + '/training/' + this.props.user._id)
+      .then(trainings => {
+        this.setState({ cards: trainings.data })
       })
   }
 
   componentDidMount() {
     this.isLoading();
-    axios.get(this.state.baseUrl + '/publication/' + this.props.user._id)
-      .then(publications => {
-        this.setState({ cards: publications.data })
+    axios.get(this.state.baseUrl + '/training/' + this.props.user._id)
+      .then(trainings => {
+        this.setState({ cards: trainings.data })
         this.isLoading();
       })
   }
@@ -42,37 +40,37 @@ export default class App extends Component {
 
   removeCard = id => {
     this.isLoading();
-    axios.post(this.state.baseUrl + '/publication/delete/' + id)
-      .then(publication => {
-        this.getPublications();
+    axios.post(this.state.baseUrl + '/training/delete/' + id)
+      .then(training => {
+        this.getTrainings();
         this.isLoading();
       })
   }
 
 
-  publish = (data) => {
-    this.addPublish();
+  training = (data) => {
+    this.addTraining();
     this.isLoading();
-    axios.post(this.state.baseUrl + '/publication/add', data)
-      .then(publication => {
-        this.getPublications();
+    axios.post(this.state.baseUrl + '/training/add', data)
+      .then(training => {
+        this.getTrainings();
         this.isLoading();
       })
   }
 
-  publishEdit = (data, id) => {
+  trainingEdit = (data, id) => {
     // console.log(data, id)
     this.isLoading();
-    axios.post(this.state.baseUrl + '/publication/edit/' + id, data)
-      .then(publication => {
+    axios.post(this.state.baseUrl + '/training/edit/' + id, data)
+      .then(training => {
         console.log('editing')
-        // this.getPublications();
+        // this.getTrainings();
         this.componentDidMount();
         this.isLoading();
       })
   }
 
-  addPublish = () => {
+  addTraining = () => {
     this.setState({ adding: !this.state.adding })
   }
 
@@ -81,9 +79,9 @@ export default class App extends Component {
   }
 
   addBtn = () => {
-    return (!this.state.loader && (this.state.adding ? <a href="#2" onClick={this.addPublish}> <i id="close" className="material-icons md-48">
+    return (!this.state.loader && (this.state.adding ? <a href="#2" onClick={this.addTraining}> <i id="close" className="material-icons md-48">
       cancel
-    </i></a> : <a href="#2" onClick={this.addPublish}> <i className="material-icons md-48">
+    </i></a> : <a href="#2" onClick={this.addTraining}> <i className="material-icons md-48">
         add_circle
   </i></a>))
   }
@@ -109,11 +107,11 @@ export default class App extends Component {
           <div className="mt-4 text-center">
             {this.addBtn()}
           </div>
-          {this.state.adding && (<Form publish={this.publish} user={this.props.user} />)}
+          {this.state.adding && (<Form training={this.training} user={this.props.user} />)}
         </div>
         {
           this.state.cards.map(card => (
-            <Card key={card._id} card={card} user={this.props.user} removeCard={this.removeCard} publishEdit={this.publishEdit}></Card>
+            <Card key={card._id} card={card} user={this.props.user} removeCard={this.removeCard} trainingEdit={this.trainingEdit}></Card>
           ))
         }
         <Footer />

@@ -1,20 +1,13 @@
-import React from 'react'
-import './spinner.css'
+import React, { Fragment } from 'react';
+import Spinner from './Loader.gif';
 
-function Spinner() {
+
+const Spinners = () => {
   return (
-    <div id="preloader">
-      <div id="status">
-        <div className="showbox">
-          <div className="loader">
-            <svg className="circular" viewBox="25 25 50 50">
-              <circle className="path" cx="50" cy="50" r="20" fill="none" strokeWidth="2" strokeMiterlimit="10" />
-            </svg>
-          </div>
-        </div>
-      </div>
-    </div>
+    <Fragment>
+      <img src={Spinner} alt="Loading" style={{ width: '150px', margin: 'auto', display: 'block' }} />
+    </Fragment>
   )
 }
 
-export default Spinner
+export default Spinners

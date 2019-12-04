@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "../awards/form.css";
+import "../awards/form.css"
 import moment from "moment";
 import {
   PDFDownloadLink,
@@ -29,7 +29,7 @@ export default class Card extends Component {
 
   }
 
-  editpublication = () => {
+  editresearch = () => {
     this.setState({ isediting: !this.state.isediting });
   };
 
@@ -39,8 +39,8 @@ export default class Card extends Component {
 
   mySubmitHandler = event => {
     event.preventDefault();
-    this.props.publishEdit(this.state, this.props.card._id);
-    this.editpublication();
+    this.props.researchEdit(this.state, this.props.card._id);
+    this.editresearch();
   };
 
   myChangeHandler = event => {
@@ -58,16 +58,16 @@ export default class Card extends Component {
             <div className="card-body">
               <form className="dashboard-form" onSubmit={this.mySubmitHandler}>
                 <label htmlFor="title">Title</label>
-                <input type="text" name="title" value={this.state.title} placeholder="Enter Publication Title" id="title" onChange={this.myChangeHandler} required></input>
+                <input type="text" name="title" value={this.state.title} placeholder="Enter Research Title" id="title" onChange={this.myChangeHandler} required></input>
                 <label htmlFor="author">Author</label>
                 <input type="text" name="author" value={this.state.author} placeholder="Enter Author's name" id="author" onChange={this.myChangeHandler} required></input>
                 <label htmlFor="link">Link</label>
-                <input type="text" name="link" value={this.state.link} placeholder="Enter Publication Link" id="link" onChange={this.myChangeHandler} required></input>
+                <input type="text" name="link" value={this.state.link} placeholder="Enter Research Link" id="link" onChange={this.myChangeHandler} required></input>
                 <label htmlFor="date">Date</label>
                 <input type="date" name="date" value={moment(this.state.date).format("YYYY-MM-DD")} id="date" onChange={this.myChangeHandler} required></input>
                 <div className="form-group text-center">
                   <button type="submit" className="btn btn-success">submit</button>
-                  <button onClick={this.editpublication} className="btn btn-warning">cancel</button>
+                  <button onClick={this.editresearch} className="btn btn-warning">cancel</button>
                 </div>
               </form>
             </div>
@@ -126,7 +126,7 @@ export default class Card extends Component {
                     rel="noopener noreferrer"
                     className="btn btn-outline-dark"
                   >
-                    View Publication
+                    View Research
                   </a>
                 </div>
                 <div className="mt-4 text-center">
@@ -138,7 +138,7 @@ export default class Card extends Component {
                     <i className="fas fa-print"></i>&emsp;
                     <PDFDownloadLink
                       document={PubDoc()}
-                      fileName="publications.pdf"
+                      fileName="researchs.pdf"
                     >
                       {({ blob, url, loading, error }) =>
                         loading ? "Loading pdf" : "Print PDF"
@@ -149,7 +149,7 @@ export default class Card extends Component {
                   <button
                     href="#1"
                     className="btn btn-outline-info"
-                    onClick={() => this.editpublication(_id)}
+                    onClick={() => this.editresearch(_id)}
                   >
                     <i className="fa fa-pencil"></i>&emsp;Edit&emsp;
                   </button>

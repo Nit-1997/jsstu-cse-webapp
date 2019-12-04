@@ -15,7 +15,7 @@ export default class App extends Component {
     super(props);
     this.state = {
       cards: [],
-      publication: {},
+      subject: {},
       "baseUrl": 'https://jssstu-cs.herokuapp.com',
       // "baseUrl": "http://localhost:4000",
       "adding": false,
@@ -23,18 +23,18 @@ export default class App extends Component {
     }
   }
 
-  getPublications = () => {
-    axios.get(this.state.baseUrl + '/publication/' + this.props.user._id)
-      .then(publications => {
-        this.setState({ cards: publications.data })
+  getSubjects = () => {
+    axios.get(this.state.baseUrl + '/subject/' + this.props.user._id)
+      .then(subjects => {
+        this.setState({ cards: subjects.data })
       })
   }
 
   componentDidMount() {
     this.isLoading();
-    axios.get(this.state.baseUrl + '/publication/' + this.props.user._id)
-      .then(publications => {
-        this.setState({ cards: publications.data })
+    axios.get(this.state.baseUrl + '/subject/' + this.props.user._id)
+      .then(subjects => {
+        this.setState({ cards: subjects.data })
         this.isLoading();
       })
   }
@@ -42,37 +42,37 @@ export default class App extends Component {
 
   removeCard = id => {
     this.isLoading();
-    axios.post(this.state.baseUrl + '/publication/delete/' + id)
-      .then(publication => {
-        this.getPublications();
+    axios.post(this.state.baseUrl + '/subject/delete/' + id)
+      .then(subject => {
+        this.getSubjects();
         this.isLoading();
       })
   }
 
 
-  publish = (data) => {
-    this.addPublish();
+  subject = (data) => {
+    this.addSubject();
     this.isLoading();
-    axios.post(this.state.baseUrl + '/publication/add', data)
-      .then(publication => {
-        this.getPublications();
+    axios.post(this.state.baseUrl + '/subject/add', data)
+      .then(subject => {
+        this.getSubjects();
         this.isLoading();
       })
   }
 
-  publishEdit = (data, id) => {
+  subjectEdit = (data, id) => {
     // console.log(data, id)
     this.isLoading();
-    axios.post(this.state.baseUrl + '/publication/edit/' + id, data)
-      .then(publication => {
+    axios.post(this.state.baseUrl + '/subject/edit/' + id, data)
+      .then(subject => {
         console.log('editing')
-        // this.getPublications();
+        // this.getSubjects();
         this.componentDidMount();
         this.isLoading();
       })
   }
 
-  addPublish = () => {
+  addSubject = () => {
     this.setState({ adding: !this.state.adding })
   }
 
@@ -81,9 +81,9 @@ export default class App extends Component {
   }
 
   addBtn = () => {
-    return (!this.state.loader && (this.state.adding ? <a href="#2" onClick={this.addPublish}> <i id="close" className="material-icons md-48">
+    return (!this.state.loader && (this.state.adding ? <a href="#2" onClick={this.addSubject}> <i id="close" className="material-icons md-48">
       cancel
-    </i></a> : <a href="#2" onClick={this.addPublish}> <i className="material-icons md-48">
+    </i></a> : <a href="#2" onClick={this.addSubject}> <i className="material-icons md-48">
         add_circle
   </i></a>))
   }
@@ -109,11 +109,11 @@ export default class App extends Component {
           <div className="mt-4 text-center">
             {this.addBtn()}
           </div>
-          {this.state.adding && (<Form publish={this.publish} user={this.props.user} />)}
+          {this.state.adding && (<Form subject={this.subject} user={this.props.user} />)}
         </div>
         {
           this.state.cards.map(card => (
-            <Card key={card._id} card={card} user={this.props.user} removeCard={this.removeCard} publishEdit={this.publishEdit}></Card>
+            <Card key={card._id} card={card} user={this.props.user} removeCard={this.removeCard} subjectEdit={this.subjectEdit}></Card>
           ))
         }
         <Footer />

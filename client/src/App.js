@@ -5,11 +5,14 @@ import Signup from "./containers/signup/signup";
 import Login from "./containers/login/login";
 import Landing from "./containers/landing/LandingPage";
 import Dashboard from "./containers/dashboard/dashboard";
-import Publication from './containers/dashboard/publication/publication';
-import Research from './containers/dashboard/research/research';
-import Awards from './containers/dashboard/awards/Awards';
-import Training from './containers/dashboard/trainingCon/Training';
-import Subject from './containers/dashboard/subjects/Subject';
+
+import Publication from "./containers/dashboard/publication/publication";
+import Research from "./containers/dashboard/research/research";
+import Awards from "./containers/dashboard/awards/Awards";
+import Training from "./containers/dashboard/trainingCon/Training";
+import Subject from "./containers/dashboard/subjects/Subject";
+import Faculty from "./containers/faculty/faculty";
+
 import { connect } from "react-redux";
 import * as actions from "./store/actions/index";
 
@@ -23,7 +26,7 @@ class App extends Component {
     this.props.onTryAutoSignIn();
   }
 
-  componentDidUpdate() { }
+  componentDidUpdate() {}
 
   render() {
     let routes;
@@ -49,6 +52,7 @@ class App extends Component {
           />
           <Route path="/dashboard/subject" render={() => <Subject loggedIn={this.props.loggedIn} user={this.props.user} />}
           />
+          <Route path="/faculty" render={() => <Faculty />} />
           <Redirect to="/" />
         </Switch>
       );
@@ -62,6 +66,7 @@ class App extends Component {
           />
           <Route path="/signup" render={() => <Signup />} />
           <Route path="/login" render={() => <Login />} />
+          <Route path="/faculty" render={() => <Faculty />} />
           <Redirect to="/" />
         </Switch>
       );
@@ -92,7 +97,4 @@ const mapStateToProps = state => {
   }
 };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);

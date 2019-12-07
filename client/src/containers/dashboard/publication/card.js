@@ -25,7 +25,9 @@ export default class Card extends Component {
     this.myChangeHandler = this.myChangeHandler.bind(this);
   }
 
+
   componentDidMount() {}
+
 
   editpublication = () => {
     this.setState({ isediting: !this.state.isediting });
@@ -115,6 +117,7 @@ export default class Card extends Component {
           </div>
         </div>
       </div>
+    </div>
     );
   };
 

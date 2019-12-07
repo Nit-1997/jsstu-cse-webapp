@@ -66,7 +66,6 @@ export default class App extends Component {
     axios
       .post(this.state.baseUrl + "/publication/edit/" + id, data)
       .then(publication => {
-        console.log("editing");
         // this.getPublications();
         this.componentDidMount();
         this.isLoading();

@@ -25,9 +25,9 @@ export default class Card extends Component {
     this.myChangeHandler = this.myChangeHandler.bind(this);
   }
 
-  componentDidMount() {
 
-  }
+  componentDidMount() { }
+
 
   editpublication = () => {
     this.setState({ isediting: !this.state.isediting });
@@ -51,30 +51,72 @@ export default class Card extends Component {
   };
 
   editing = () => {
-    return (<div className="container">
-      <div className="row">
-        <div className="col-md-8 wow slideInLeft mt m-auto">
-          <div className="card mt-2">
-            <div className="card-body">
-              <form className="dashboard-form" onSubmit={this.mySubmitHandler}>
-                <label htmlFor="title">Title</label>
-                <input type="text" name="title" value={this.state.title} placeholder="Enter Publication Title" id="title" onChange={this.myChangeHandler} required></input>
-                <label htmlFor="author">Author</label>
-                <input type="text" name="author" value={this.state.author} placeholder="Enter Author's name" id="author" onChange={this.myChangeHandler} required></input>
-                <label htmlFor="link">Link</label>
-                <input type="text" name="link" value={this.state.link} placeholder="Enter Publication Link" id="link" onChange={this.myChangeHandler} required></input>
-                <label htmlFor="date">Date</label>
-                <input type="date" name="date" value={moment(this.state.date).format("YYYY-MM-DD")} id="date" onChange={this.myChangeHandler} required></input>
-                <div className="form-group text-center">
-                  <button type="submit" className="btn btn-success">submit</button>
-                  <button onClick={this.editpublication} className="btn btn-warning">cancel</button>
-                </div>
-              </form>
+    return (
+      <div className="container">
+        <div className="row">
+          <div className="col-md-8 wow slideInLeft mt m-auto">
+            <div className="card mt-2">
+              <div className="card-body">
+                <form
+                  className="dashboard-form"
+                  onSubmit={this.mySubmitHandler}
+                >
+                  <label htmlFor="title">Title</label>
+                  <input
+                    type="text"
+                    name="title"
+                    value={this.state.title}
+                    placeholder="Enter Publication Title"
+                    id="title"
+                    onChange={this.myChangeHandler}
+                    required
+                  ></input>
+                  <label htmlFor="author">Author</label>
+                  <input
+                    type="text"
+                    name="author"
+                    value={this.state.author}
+                    placeholder="Enter Author's name"
+                    id="author"
+                    onChange={this.myChangeHandler}
+                    required
+                  ></input>
+                  <label htmlFor="link">Link</label>
+                  <input
+                    type="text"
+                    name="link"
+                    value={this.state.link}
+                    placeholder="Enter Publication Link"
+                    id="link"
+                    onChange={this.myChangeHandler}
+                    required
+                  ></input>
+                  <label htmlFor="date">Date</label>
+                  <input
+                    type="date"
+                    name="date"
+                    value={moment(this.state.date).format("YYYY-MM-DD")}
+                    id="date"
+                    onChange={this.myChangeHandler}
+                    required
+                  ></input>
+                  <div className="form-group text-center">
+                    <button type="submit" className="btn btn-success">
+                      submit
+                    </button>
+                    <button
+                      onClick={this.editpublication}
+                      className="btn btn-warning"
+                    >
+                      cancel
+                    </button>
+                  </div>
+                </form>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
     );
   };
 

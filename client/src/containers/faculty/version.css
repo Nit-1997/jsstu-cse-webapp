@@ -1,0 +1,432 @@
+/*------------------------------------------------------------------
+    Version: 1.0
+-------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------
+    [Table of contents]
+
+    1. APP VERSION
+
+-------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------
+    APP SHOWCASE VERSION
+-------------------------------------------------------------------*/
+
+#faculty .lead strong,
+#faculty .icon-wrapper:hover a {
+  color: #e80d45;
+}
+
+/**************************************
+GRADIENTS 
+**************************************/
+
+#faculty .btn-buy:hover,
+#faculty .icon_wrap:hover,
+#faculty .nav-pills > li.active > a,
+#faculty .nav-pills > li.active > a:focus,
+#faculty .nav-pills > li.active > a:hover,
+#faculty .icon-wrapper:hover i,
+#faculty .grd1 {
+  color: #ffffff;
+  background: #ad1457;
+  border: 1px solid #ad1457;
+}
+
+#faculty .icon_wrap,
+#faculty .dmtop:hover,
+#faculty .features-right li:hover i,
+#faculty .features-left li:hover i,
+#faculty .nav-pills > li:hover > a,
+#faculty .nav-pills > li:focus > a,
+#faculty .nav-pills > li.active > a,
+#faculty .nav-pills > li.active > a:focus,
+#faculty .nav-pills > li.active > a:hover,
+#faculty .divider-bar,
+#faculty .owl-next:hover i,
+#faculty .owl-prev:hover i,
+#faculty .icon-wrapper:hover i:hover,
+#faculty .grd1:hover,
+#faculty .grd1:focus {
+  background-position: 100px;
+  color: #ffffff;
+  background: #c62828;
+  box-shadow: 0px 1px 27px -3px rgba(0, 0, 0, 0.2);
+}
+
+#faculty .navbar-nav span {
+  color: #0d61d0 !important;
+}
+
+#faculty .cac:hover {
+  background: #c62828;
+}
+
+/**************************************
+OTHERS 
+**************************************/
+
+#faculty .app_iphone_01 {
+  width: 700px;
+  position: absolute;
+  right: 10%;
+  z-index: 2;
+  bottom: -32%;
+}
+
+#faculty .app_iphone_02 {
+  width: 700px;
+  position: absolute;
+  right: 0%;
+  bottom: -46%;
+  z-index: 1;
+}
+
+#faculty .cac {
+  background-color: #ad1457;
+}
+
+#faculty .dmtop,
+#faculty .footer,
+#faculty .affix {
+  background-color: #201b25;
+}
+
+#faculty .copyrights {
+  background-color: #1c1721;
+}
+
+#faculty .footer-distributed form input {
+  background-color: #120d17;
+}
+
+#faculty .btn-light {
+  color: #ffffff;
+  opacity: 1;
+}
+
+#faculty .btn-light:hover {
+  background: #ffffff;
+  color: #121212;
+}
+
+#faculty .btn-light i {
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+#faculty .effect-1:after {
+  box-shadow: 0 0 0 2px #ad1457;
+}
+
+#faculty .footer a,
+#faculty .cac a h3,
+#faculty .footer-distributed form input,
+#faculty .footer-distributed .footer-company-name,
+#faculty .footer {
+  color: #736e78;
+}
+
+#faculty .footer-distributed form input::-webkit-input-placeholder {
+  color: #736e78;
+}
+
+#faculty .footer-distributed form input::-moz-placeholder {
+  opacity: 1;
+  color: #736e78;
+}
+
+#faculty .footer-distributed form input:-ms-input-placeholder {
+  color: #736e78;
+}
+
+#faculty .noover {
+  overflow: hidden;
+}
+
+#faculty .noover i {
+  font-size: 34px;
+  vertical-align: middle;
+  color: #ffffff;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+#faculty .noover p {
+  color: rgba(255, 255, 255, 1);
+}
+
+#faculty .desc {
+  background-color: #ffffff;
+  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.1);
+  border: 0 solid #efefef;
+}
+
+#faculty .contact_form {
+  background-color: transparent;
+}
+
+#faculty .owl-next i,
+#faculty .owl-prev i {
+  background-color: #c62828;
+  color: #ffffff;
+}
+
+#faculty .desc h3 i {
+  color: #c62828;
+}
+
+#faculty .header_style_01 {
+  top: 45px;
+}
+
+#faculty .stat-wrap .alignleft {
+  margin-right: 20px;
+}
+
+#faculty .stat-wrap h3 {
+  color: #ffffff !important;
+  display: block;
+  margin-top: 10px !important;
+}
+
+#faculty .stat-wrap .rating i {
+  color: #eabe12;
+}
+
+#faculty .stat-wrap p {
+  color: #ffffff;
+  font-size: 38px;
+  font-weight: 500;
+  margin: 0;
+  padding: 12px 0 0;
+  line-height: 1;
+}
+
+#faculty .section.db .section-title h2 {
+  color: rgba(255, 255, 255, 0.7) !important;
+  padding: 0;
+  letter-spacing: 2px;
+  margin: 0;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+#faculty .apple-button a,
+#faculty .cac a h3,
+#faculty .section.db .section-title .lead {
+  color: #ffffff !important;
+}
+
+#faculty .apple-button {
+  line-height: 1;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  padding: 30px 20px;
+  border-radius: 8px;
+}
+
+#faculty .apple-button i {
+  margin: -5px 20px;
+  vertical-align: middle;
+  font-size: 64px;
+}
+
+#faculty .apple-button {
+  font-size: 21px;
+  font-weight: 300;
+}
+
+#faculty .apple-button strong {
+  line-height: 1;
+  margin-top: 5px;
+  text-transform: uppercase;
+  font-size: 31px;
+  display: block;
+}
+
+#faculty .dev-list .widget p {
+  margin: 0;
+  padding: 5px 0 15px;
+}
+
+#faculty .dev-list img {
+  width: 100%;
+}
+
+#faculty .footer-social .btn {
+  padding: 2px;
+  width: 35px;
+  height: 35px;
+  line-height: 33px;
+  text-align: center;
+  margin: 0 3px;
+  border: 1px solid #004a99 !important;
+  color: #ffffff;
+  background-color: #004a99 !important;
+}
+
+#faculty .fa {
+  color: #fff;
+}
+
+#faculty .dev-list .widget {
+  padding: 30px;
+  border: 1px solid #ededed;
+}
+
+#faculty .dev-list .widget h3 {
+  font-size: 21px;
+  padding: 0 0 5px;
+  margin: 0;
+  line-height: 1 !important;
+}
+
+#faculty .dev-list .widget-title {
+  padding: 20px 0 10px;
+  margin: 0;
+  line-height: 1 !important;
+}
+
+#faculty .iphones {
+  width: 1080px;
+  max-width: 1080px;
+  position: absolute;
+  right: -20%;
+  bottom: -16%;
+  z-index: 0;
+}
+
+#faculty .how-its-work .hc {
+  background-color: #111;
+  padding: 40px;
+  width: 25%;
+  color: #ffffff;
+  float: left;
+}
+
+#faculty .how-its-work .hc h2 {
+  font-size: 150px;
+  display: block;
+  padding: 0 0 0 30px;
+  margin: 0 0 15px;
+  line-height: 50px !important;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.1);
+  position: relative;
+  z-index: 1;
+}
+
+#faculty .how-its-work .hc h3 {
+  color: #ffffff;
+  font-size: 38px;
+  position: relative;
+  z-index: 2;
+}
+
+#faculty .how-its-work .hc p {
+  font-size: 21px;
+  font-weight: 300;
+  color: #ffffff !important;
+}
+
+#faculty .how-its-work .hc p.lead {
+  font-size: 15px;
+  font-weight: 400;
+  color: #ffffff !important;
+}
+
+#faculty .hc.colon1 {
+  background-color: #c62828;
+}
+
+#faculty .hc.colon2 {
+  background-color: #ad1457;
+}
+
+#faculty .hc.colon3 {
+  background-color: #c62828;
+}
+
+#faculty .hc.colon4 {
+  background-color: #ad1457;
+}
+
+#faculty .app-features li {
+  border-bottom: 1px dashed #ddd;
+  padding-bottom: 30px;
+}
+
+#faculty .app-features li:last-child {
+  border-bottom: 0 dashed #efefef;
+  padding-bottom: 0px;
+}
+
+#faculty .entry {
+  position: relative;
+  padding: 0 !important;
+  margin-bottom: 0;
+  overflow: hidden;
+}
+
+#faculty .magnifier {
+  position: absolute;
+  top: 0;
+  cursor: pointer !important;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 100px;
+  left: 0;
+  bottom: 500px;
+  right: 0;
+  z-index: 1;
+  zoom: 1;
+  cursor: crosshair;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  -webkit-transition: all 0.8s ease-in-out;
+  -moz-transition: all 0.8s ease-in-out;
+  -ms-transition: all 0.8s ease-in-out;
+  -o-transition: all 0.8s ease-in-out;
+  transition: all 0.8s ease-in-out;
+}
+
+#faculty .entry:hover .magnifier {
+  zoom: 1;
+  bottom: 0;
+  filter: alpha(opacity=100);
+  opacity: 1;
+  border-radius: 0px;
+}
+
+#faculty .owl-app {
+  position: relative;
+  overflow: hidden;
+  background-color: #fff;
+  height: 600px;
+  margin: 0 auto;
+  z-index: 1;
+  width: 300px;
+}
+
+#faculty .owl-app::before {
+  content: "";
+  height: 600px;
+  padding: 0;
+  overflow: hidden;
+  position: absolute;
+  width: 300px;
+  z-index: 1;
+}
+
+#faculty .owl-phone {
+  overflow: hidden;
+  background-color: #111;
+  margin: 70px auto 0;
+  height: 449px;
+  display: block;
+  z-index: 2;
+  text-align: center;
+  width: 272px !important;
+  display: block;
+  width: 100%;
+  height: auto;
+}

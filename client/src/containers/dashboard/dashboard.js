@@ -37,10 +37,17 @@ class Dashboard extends Component {
     });
   };
 
-  training = event => {
+  trainingConducted = event => {
     event.preventDefault();
     this.props.history.push({
-      pathname: "/dashboard/training"
+      pathname: "/dashboard/training/conducted"
+    });
+  };
+
+  trainingAttended = event => {
+    event.preventDefault();
+    this.props.history.push({
+      pathname: "/dashboard/training/attended"
     });
   };
 
@@ -141,7 +148,7 @@ class Dashboard extends Component {
               </div>
 
               <div className="col-md-6 col-lg-5 offset-lg-1">
-                <div className="box" onClick={this.training}>
+                <div className="box" onClick={this.trainingConducted}>
                   <div className="icon">
                     <i className="fas fa-chalkboard card-img-top"></i>
                   </div>
@@ -153,7 +160,7 @@ class Dashboard extends Component {
                 </div>
               </div>
               <div className="col-md-6 col-lg-5">
-                <div className="box">
+                <div className="box" onClick={this.trainingAttended}>
                   <div className="icon">
                     <i className="fas fa-school card-img-top"></i>
                   </div>

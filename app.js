@@ -26,7 +26,8 @@ const user = require('./routes/user');
 const publication = require('./routes/publication');
 const research = require('./routes/research');
 const award = require('./routes/awards');
-const training = require('./routes/training');
+const trainingConducted = require('./routes/training');
+const trainingAttended = require('./routes/trainingAttended');
 const subject = require('./routes/subject');
 const securedRoutes = require('./routes/securedRoutes');
 
@@ -35,7 +36,8 @@ app.use('/', user);
 app.use('/publication', publication);
 app.use('/award', award);
 app.use('/research', research);
-app.use('/training', training);
+app.use('/training/conducted', trainingConducted);
+app.use('/training/attended', trainingAttended);
 app.use('/subject', subject);
 app.use('/', passport.authenticate('jwt', { session: false }), securedRoutes);
 

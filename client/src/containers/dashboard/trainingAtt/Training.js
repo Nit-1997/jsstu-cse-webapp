@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Form from "./form"
+import Navbar from '../../landing/landing'
 import Footer from '../../landing/Footer'
 import Spinner from '../../spinner/Spinners'
 import Card from './card'
@@ -21,7 +22,7 @@ export default class App extends Component {
   }
 
   getTrainings = () => {
-    axios.get(this.state.baseUrl + '/training/conducted/' + this.props.user._id)
+    axios.get(this.state.baseUrl + '/training/attended/' + this.props.user._id)
       .then(trainings => {
         this.setState({ cards: trainings.data })
       })
@@ -29,7 +30,7 @@ export default class App extends Component {
 
   componentDidMount() {
     this.isLoading();
-    axios.get(this.state.baseUrl + '/training/conducted/' + this.props.user._id)
+    axios.get(this.state.baseUrl + '/training/attended/' + this.props.user._id)
       .then(trainings => {
         this.setState({ cards: trainings.data })
         this.isLoading();
@@ -39,7 +40,7 @@ export default class App extends Component {
 
   removeCard = id => {
     this.isLoading();
-    axios.post(this.state.baseUrl + '/training/conducted/delete/' + id)
+    axios.post(this.state.baseUrl + '/training/attended/delete/' + id)
       .then(training => {
         this.getTrainings();
         this.isLoading();
@@ -50,7 +51,7 @@ export default class App extends Component {
   training = (data) => {
     this.addTraining();
     this.isLoading();
-    axios.post(this.state.baseUrl + '/training/conducted/add', data)
+    axios.post(this.state.baseUrl + '/training/attended/add', data)
       .then(training => {
         this.getTrainings();
         this.isLoading();
@@ -60,7 +61,7 @@ export default class App extends Component {
   trainingEdit = (data, id) => {
     // console.log(data, id)
     this.isLoading();
-    axios.post(this.state.baseUrl + '/training/conducted/edit/' + id, data)
+    axios.post(this.state.baseUrl + '/training/attended/edit/' + id, data)
       .then(training => {
         console.log('editing')
         // this.getTrainings();
@@ -91,7 +92,7 @@ export default class App extends Component {
     if (this.state.loader) {
       return (
         <div>
-          
+          <Navbar loggedIn={this.props.loggedIn} />
           <div style={{ "marginTop": "100px" }}>
             <Spinner />
           </div>
@@ -101,6 +102,7 @@ export default class App extends Component {
     }
     return (
       <div>
+        <Navbar loggedIn={this.props.loggedIn} />
         <div className="container mt mb-4">
           <div className="mt-4 text-center">
             {this.addBtn()}

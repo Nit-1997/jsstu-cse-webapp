@@ -5,12 +5,12 @@ import Signup from "./containers/signup/signup";
 import Login from "./containers/login/login";
 import Landing from "./containers/landing/LandingPage";
 import Dashboard from "./containers/dashboard/dashboard";
-
 import Publication from "./containers/dashboard/publication/publication";
 import Research from "./containers/dashboard/research/research";
 import Awards from "./containers/dashboard/awards/Awards";
 import Training from "./containers/dashboard/trainingCon/Training";
 import Subject from "./containers/dashboard/subjects/Subject";
+import TrainingAttended from './containers/dashboard/trainingAtt/Training'
 import Faculty from "./containers/faculty/faculty";
 
 import { connect } from "react-redux";
@@ -28,7 +28,7 @@ class App extends Component {
     this.props.onTryAutoSignIn();
   }
 
-  componentDidUpdate() {}
+  componentDidUpdate() { }
 
   render() {
     let routes;
@@ -78,7 +78,9 @@ class App extends Component {
           />
           <Route path="/dashboard/awards" render={() => <Awards loggedIn={this.props.loggedIn} user={this.props.user} />}
           />
-          <Route path="/dashboard/training" render={() => <Training loggedIn={this.props.loggedIn} user={this.props.user} />}
+          <Route path="/dashboard/training/conducted" render={() => <Training loggedIn={this.props.loggedIn} user={this.props.user} />}
+          />
+          <Route path="/dashboard/training/attended" render={() => <TrainingAttended loggedIn={this.props.loggedIn} user={this.props.user} />}
           />
           <Route path="/dashboard/subject" render={() => <Subject loggedIn={this.props.loggedIn} user={this.props.user} />}
           />

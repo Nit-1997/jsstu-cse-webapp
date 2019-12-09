@@ -20,8 +20,6 @@ const signupSuccess = (state, action) => {
 	return updateObject(state, {
 		error: null,
 		loading: false,
-		user: action.userData,
-		token: null
 	})
 
 }

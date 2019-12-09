@@ -8,42 +8,74 @@ const bcrypt = require('bcryptjs');
 
 require('dotenv').config();
 
-var multer = require('multer');
-var storage = multer.diskStorage({
-  filename: function (req, file, callback) {
-    callback(null, Date.now() + file.originalname);
-  }
-});
-var imageFilter = function (req, file, cb) {
-  // accept image files only
-  if (!file.originalname.match(/\.(jpg|jpeg|png|gif)$/i)) {
-    return cb(new Error('Only image files are allowed!'), false);
-  }
-  cb(null, true);
-};
-var upload = multer({ storage: storage, fileFilter: imageFilter })
+// var multer = require('multer');
+// var storage = multer.diskStorage({
+//   filename: function (req, file, callback) {
+//     callback(null, Date.now() + file.originalname);
+//   }
+// });
+// var imageFilter = function (req, file, cb) {
+//   // accept image files only
+//   if (!file.originalname.match(/\.(jpg|jpeg|png|gif)$/i)) {
+//     return cb(new Error('Only image files are allowed!'), false);
+//   }
+//   cb(null, true);
+// };
+// var upload = multer({ storage: storage, fileFilter: imageFilter })
 
-var cloudinary = require('cloudinary');
-cloudinary.config({
-  cloud_name: process.env.CLOUD_NAME,
-  api_key: process.env.API_KEY,
-  api_secret: process.env.API_SECRET
-});
+// var cloudinary = require('cloudinary');
+// cloudinary.config({
+//   cloud_name: process.env.CLOUD_NAME,
+//   api_key: process.env.API_KEY,
+//   api_secret: process.env.API_SECRET
+// });
 
-router.post("/create", upload.single('image'), function (req, res) {
-  console.log(req);
-  var userObj = {
-    username: req.body.email,
-    password: req.body.password,
-    name: req.body.name,
-    designation: req.body.designation,
-    mode: req.body.mode
+// router.post("/create", upload.single('image'), function (req, res) {
+//   console.log(req);
+//   var userObj = {
+//     username: req.body.email,
+//     password: req.body.password,
+//     name: req.body.name,
+//     designation: req.body.designation,
+//     mode: req.body.mode
+//   };
+//   cloudinary.uploader.upload(req.file.path, function (result) {
+//     // add cloudinary url for the image to the campground object under image property
+//     image = result.secure_url;
+//     userObj.image = image;
+//     User.findOne({ username: req.body.email }, (err, user) => {
+//       if (err) {
+//         console.log('User.js post error: ', err)
+//       } else if (user) {
+//         res.json({
+//           error: `Sorry, already a user with the username: ${username}`
+//         })
+//       }
+//       else {
+//         User.create(userObj, function (err, newlyCreated) {
+//           if (err) {
+//             res.json(err)
+//           } else {
+//             console.log(newlyCreated);
+//             res.json(newlyCreated)
+//           }
+//         })
+//       }
+//     })
+
+//   });
+// });
+
+router.post('/addAdmin',function(req,res){
+   var userObj = {
+    username: 'jsscsdeptwebsite@gmail.com',
+    password: 'jssstucsdept',
+    name:'JSSS TU Admin',
+    designation: 'admin',
+    mode: 'admin',
+    image:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUJf7pV2bbjFb_7AQsgA3kVpF6qvHxhzzbrM692Ar2Xn17yID30A&s'
   };
-  cloudinary.uploader.upload(req.file.path, function (result) {
-    // add cloudinary url for the image to the campground object under image property
-    image = result.secure_url;
-    userObj.image = image;
-    User.findOne({ username: req.body.email }, (err, user) => {
+  User.findOne({ username: userObj.username}, (err, user) => {
       if (err) {
         console.log('User.js post error: ', err)
       } else if (user) {
@@ -63,7 +95,18 @@ router.post("/create", upload.single('image'), function (req, res) {
       }
     })
 
+});
+
+router.post('/deleteAdmin',function(req,res){
+  User.remove({ username: 'jsscsdeptwebsite@gmail.com' }, function(err) {
+    if (!err) {
+           res.json('admin deleted');
+    }
+    else {
+          res.json(err);
+    }
   });
+
 });
 
 

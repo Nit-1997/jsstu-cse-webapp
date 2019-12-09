@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import "../awards/form.css"
 // import Cardlist from "./cardList"
 import Form from "./form"
-import Navbar from '../../landing/landing'
 import Footer from '../../landing/Footer'
 import Spinner from '../../spinner/Spinners'
 import Card from './card'
@@ -94,7 +93,6 @@ export default class App extends Component {
     if (this.state.loader) {
       return (
         <div>
-          <Navbar loggedIn={this.props.loggedIn} />
           <div style={{ "marginTop": "100px" }}>
             <Spinner />
           </div>
@@ -104,7 +102,6 @@ export default class App extends Component {
     }
     return (
       <div>
-        <Navbar loggedIn={this.props.loggedIn} />
         <div className="container mt mb-4">
           <div className="mt-4 text-center">
             {this.addBtn()}

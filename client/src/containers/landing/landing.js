@@ -53,7 +53,28 @@ class Landing extends Component {
   render() {
     let logoutBtn;
     if (this.props.loggedIn) {
-      logoutBtn = (
+      if(this.props.user.username==='jsscsdeptwebsite@gmail.com'){
+        logoutBtn = (
+        <Fragment>
+          <li>
+            <Link to="/dashboard" onClick={this.dashboard}>
+              Dashboard
+            </Link>
+          </li>
+          <li>
+            <Link to="/logout" onClick={this.logout}>
+              Logout
+            </Link>
+          </li>
+          <li>
+            <Link to="/signup" onClick={this.signup}>
+              Add Faculty
+            </Link>
+          </li>
+        </Fragment>
+      ); 
+      }else{
+        logoutBtn = (
         <Fragment>
           <li>
             <Link to="/dashboard" onClick={this.dashboard}>
@@ -67,17 +88,13 @@ class Landing extends Component {
           </li>
         </Fragment>
       );
+      }
     } else {
       logoutBtn = (
         <Fragment>
           <li>
             <Link to="/login" onClick={this.login}>
               Login
-            </Link>
-          </li>
-          <li>
-            <Link to="/signup" onClick={this.signup}>
-              Signup
             </Link>
           </li>
         </Fragment>

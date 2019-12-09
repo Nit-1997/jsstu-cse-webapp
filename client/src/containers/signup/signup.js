@@ -7,7 +7,6 @@ import ErrorImg from '../../assets/error.png';
 // import axios from 'axios';
 import * as actions from '../../store/actions/index';
 import {connect} from 'react-redux';
-import Navbar from '../landing/landing';
 import Footer from "../landing/Footer";
 
 class Signup extends Component {
@@ -119,7 +118,6 @@ class Signup extends Component {
     }
     return (
       <div className="commHeader">
-      <Navbar/>
       <div className="mt-4"></div>
          <Toast
         onClose={() => this.setState({show:false})}

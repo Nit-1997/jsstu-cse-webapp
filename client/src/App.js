@@ -16,6 +16,8 @@ import Faculty from "./containers/faculty/faculty";
 import { connect } from "react-redux";
 import * as actions from "./store/actions/index";
 
+import Navbar from './containers/landing/landing';
+
 class App extends Component {
   constructor() {
     super();
@@ -31,7 +33,35 @@ class App extends Component {
   render() {
     let routes;
     if (this.props.loggedIn) {
-      routes = (
+      if(this.props.user.username === 'jsscsdeptwebsite@gmail.com'){
+       routes = (
+           <Switch>
+              <Route
+                path="/"
+                exact
+                render={() => <Landing loggedIn={this.props.loggedIn} />}
+              />
+              <Route
+                path="/dashboard" exact
+                render={() => <Dashboard loggedIn={this.props.loggedIn} user={this.props.user} />}
+              />
+              <Route path="/dashboard/publications" render={() => <Publication loggedIn={this.props.loggedIn} user={this.props.user} />}
+              />
+              <Route path="/dashboard/researchs" render={() => <Research loggedIn={this.props.loggedIn} user={this.props.user} />}
+              />
+              <Route path="/dashboard/awards" render={() => <Awards loggedIn={this.props.loggedIn} user={this.props.user} />}
+              />
+              <Route path="/dashboard/training" render={() => <Training loggedIn={this.props.loggedIn} user={this.props.user} />}
+              />
+              <Route path="/dashboard/subject" render={() => <Subject loggedIn={this.props.loggedIn} user={this.props.user} />}
+              />
+              <Route path="/signup" render={() => <Signup />} />
+              <Route path="/faculty" render={() => <Faculty />} />
+              <Redirect to="/" />
+          </Switch>
+       ) 
+      }else{
+         routes = (
         <Switch>
           <Route
             path="/"
@@ -56,6 +86,7 @@ class App extends Component {
           <Redirect to="/" />
         </Switch>
       );
+      }
     } else {
       routes = (
         <Switch>
@@ -64,7 +95,6 @@ class App extends Component {
             exact
             render={() => <Landing loggedIn={this.props.loggedIn} />}
           />
-          <Route path="/signup" render={() => <Signup />} />
           <Route path="/login" render={() => <Login />} />
           <Route path="/faculty" render={() => <Faculty />} />
           <Redirect to="/" />
@@ -73,6 +103,7 @@ class App extends Component {
     }
     return (
       <div>
+        <Navbar loggedIn={this.props.loggedIn} />
         <header>{routes}</header>
       </div>
     );

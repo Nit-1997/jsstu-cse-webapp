@@ -1,8 +1,8 @@
 import * as actionTypes from './actionTypes';
 import axios from 'axios';
 
-const baseurl = 'https://jssstu-cs.herokuapp.com';
-// const baseurl = "http://localhost:4000"
+//const baseurl = 'https://jssstu-cs.herokuapp.com';
+ const baseurl = "http://localhost:7000"
 
 export const signupStart = () => {
 	return {
@@ -13,7 +13,7 @@ export const signupStart = () => {
 export const signupSuccess = (response) => {
 	return {
 		type: actionTypes.SIGNUP_SUCCESS,
-		userData: response.user
+		userData: response
 	};
 };
 
@@ -28,22 +28,19 @@ export const signup = (formData, username, password) => {
 	return dispatch => {
 		dispatch(signupStart());
 		const url = baseurl + '/create';
+		const token = localStorage.getItem('token');
 		axios.post(url,
 			formData, {
 			headers: {
-				'Content-Type': 'multipart/form-data'
+				'Content-Type': 'multipart/form-data',
+				'Authorization': token
 			}
 		}
 		).then(response => {
 			if (!response.data.errmsg) {
 				console.log('successful signup')
 				console.log(response.data);
-				let form = {
-					username: username,
-					password: password
-				}
-				console.log(form);
-				dispatch(login(form));
+				dispatch(signupSuccess(response.data));
 			} else {
 				let errMsg = 'username already taken';
 				let Err = {
@@ -91,11 +88,18 @@ export const login = (formData) => {
 		axios.post(url, formData)
 			.then(response => {
 				console.log('login response: ')
-				console.log(response.data)
-				if (response.status === 200) {
-					localStorage.setItem('token', response.data.token);
-					dispatch(loginSuccess(response.data));
-				}
+				console.log(response)
+				if(response.data.user){
+					console.log('fin');
+                    localStorage.setItem('token', response.data.token);
+			        dispatch(loginSuccess(response.data));
+				}else{
+				  console.log('in')
+					let error={
+						msg :'user not found'
+					}
+				   dispatch(loginFailure(error));
+				} 
 			}).catch(error => {
 				dispatch(loginFailure(error));
 			})

@@ -2,7 +2,6 @@ import React, { Component } from "react";
 // import { Route, Switch, Redirect } from "react-router-dom";
 import { withRouter } from "react-router-dom";
 import "./dashboard.css";
-import Navbar from "../landing/landing";
 import Footer from "../landing/Footer";
 import Axios from "axios";
 
@@ -71,7 +70,6 @@ class Dashboard extends Component {
     const subjects = this.state.subjects;
     return (
       <div className="Dashboard  mt-2">
-        <Navbar loggedIn={this.props.loggedIn} />
         <div className="container mt-4">
           <div className="box well">
             <div className="row">

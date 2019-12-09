@@ -1,5 +1,4 @@
 import React from "react";
-import Navbar from "../landing/landing";
 import Footer from "../landing/Footer";
 import "./faculty.css";
 import "./version.css";
@@ -7,7 +6,6 @@ import "./version.css";
 const Faculty = () => {
   return (
     <div>
-      <Navbar />
       <div id="faculty" className="section wb">
         <div className="container">
           <div className="section-title text-center mt-5">

@@ -7,7 +7,6 @@ import {Toast,Spinner} from 'react-bootstrap';
 import ErrorImg from '../../assets/error.png';
 import * as actions from '../../store/actions/index';
 import {connect} from 'react-redux';
-import Navbar from '../landing/landing';
 import Footer from '../landing/Footer';
 
 class Login extends Component {
@@ -73,7 +72,6 @@ class Login extends Component {
     }
     return (
       <div>
-      <Navbar/>
        <Toast
         onClose={() => this.setState({show:false})}
         show={this.state.show} delay={4000} autohide
